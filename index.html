@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ビズワク｜人生と経営に余白をつくる社外CFO</title>
+  <meta name="description" content="売上1〜5億円のオーナー経営者へ。コーチング財務で、想いと数字を統合し、経営と人生の両方を前に進める社外CFOサービス。">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts: Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-primary {
+      background-color: #8BC34A;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #7CB342;
+    }
+
+    .text-primary {
+      color: #8BC34A;
+    }
+
+    .bg-accent {
+      background-color: #F5F5F5;
+    }
+
+    .scroll-animation {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .scroll-animation.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header class="fixed w-full bg-white shadow-sm z-50">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-primary">
+        ビズワク
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#mvv" class="text-gray-700 hover:text-primary transition text-sm">MVV</a>
+        <a href="#service" class="text-gray-700 hover:text-primary transition text-sm">サービス</a>
+        <a href="#difference" class="text-gray-700 hover:text-primary transition text-sm">税理士との違い</a>
+        <a href="#profile" class="text-gray-700 hover:text-primary transition text-sm">プロフィール</a>
+        <a href="#pricing" class="text-gray-700 hover:text-primary transition text-sm">料金</a>
+        <a href="#voice" class="text-gray-700 hover:text-primary transition text-sm">お客様の声</a>
+        <a href="contact.html" class="btn-primary text-white px-6 py-2 rounded-lg font-medium text-sm">お問い合わせ</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-gray-700 text-2xl" id="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#mvv" class="block text-gray-700 hover:text-primary transition py-2">MVV</a>
+        <a href="#service" class="block text-gray-700 hover:text-primary transition py-2">サービス</a>
+        <a href="#difference" class="block text-gray-700 hover:text-primary transition py-2">税理士との違い</a>
+        <a href="#profile" class="block text-gray-700 hover:text-primary transition py-2">プロフィール</a>
+        <a href="#pricing" class="block text-gray-700 hover:text-primary transition py-2">料金</a>
+        <a href="#voice" class="block text-gray-700 hover:text-primary transition py-2">お客様の声</a>
+        <a href="contact.html" class="block btn-primary text-white px-4 py-2 rounded-lg font-medium text-center">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto text-center animate-fade-in">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+        売上1億を超えたら、<br>社外CFOという選択
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-700 mb-4">
+        人生と経営に余白をつくる、コーチング財務
+      </p>
+      <p class="text-sm sm:text-base text-gray-600 mb-8">
+        売上1〜5億円のオーナー経営者へ
+      </p>
+      <p class="text-base sm:text-lg text-gray-600 mb-12 font-medium">
+        お金を不安から安心に、経営者のビジョンを形にする
+      </p>
+      <a href="contact.html" class="inline-block btn-primary text-white px-8 py-4 rounded-lg font-bold text-base sm:text-lg hover:shadow-lg transition">
+        まず1時間、無料で話してみる
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== BIZWAKU NAME SECTION ===== -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16 scroll-animation">
+        ビズワクに込めた想い
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <!-- Left Block -->
+        <div class="bg-white rounded-lg p-8 text-center scroll-animation">
+          <h3 class="text-xl sm:text-2xl font-bold text-primary mb-6">
+            「ビズ」に込めた想い
+          </h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="text-lg">
+              <span class="font-bold">Be</span>（ありのまま）
+            </li>
+            <li class="text-lg">
+              <span class="font-bold">Be with</span>（共に）
+            </li>
+            <li class="text-lg">
+              <span class="font-bold">Business</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Block -->
+        <div class="bg-white rounded-lg p-8 text-center scroll-animation">
+          <h3 class="text-xl sm:text-2xl font-bold text-primary mb-6">
+            「ワク」に込めた想い
+          </h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="text-lg">
+              <span class="font-bold">ワクワク</span>
+            </li>
+            <li class="text-lg">
+              <span class="font-bold">ありのままが湧く</span>（ワク）
+            </li>
+            <li class="text-lg">
+              <span class="font-bold">枠</span>（ワク）<span class="font-bold">を超える</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MVV SECTION ===== -->
+  <section id="mvv" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16 scroll-animation">
+        Vision・Mission・Value
+      </h2>
+
+      <!-- Vision -->
+      <div class="mb-16 bg-gradient-to-r from-primary from-10% to-green-50 rounded-lg p-8 sm:p-12 scroll-animation">
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-8">
+          Vision
+        </h3>
+        <p class="text-lg sm:text-xl text-white font-semibold mb-6">
+          ありのままで、誰もがわくわくと挑戦できる社会をつくる
+        </p>
+        <ul class="space-y-3 text-gray-800 ml-4">
+          <li class="flex items-start">
+            <span class="text-white mr-3">•</span>
+            <span>社会全体に「欠けたものを埋める」のではなく「今あるものを活かす」文化を広める</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-white mr-3">•</span>
+            <span>誰もが安心して一歩踏み出せる世界へ</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-white mr-3">•</span>
+            <span>個のちからを、社会のちからに</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-white mr-3">•</span>
+            <span>競争ではなく、共創へ</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mission -->
+      <div class="mb-16 bg-accent rounded-lg p-8 sm:p-12 scroll-animation">
+        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          Mission
+        </h3>
+        <p class="text-lg sm:text-xl font-semibold text-gray-800 mb-6">
+          一歩踏み出す人を受け入れ、可能性を共に育てる
+        </p>
+        <ul class="space-y-3 text-gray-700 ml-4">
+          <li class="flex items-start">
+            <span class="text-primary mr-3">•</span>
+            <span>不安や怖さを感じる人が安心して挑戦できる場を提供する</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-3">•</span>
+            <span>自分たちも体現者として、進む姿を見せる</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-3">•</span>
+            <span>数字の専門性とマインドの伴走で、自分らしい挑戦を「社会の価値」に変えていく</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Values -->
+      <div class="scroll-animation">
+        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          Value
+        </h3>
+        <div class="space-y-4">
+          <!-- Value 1 -->
+          <div class="bg-white border-l-4 border-primary p-6 rounded-r-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-bold text-gray-900 mb-3">ありのままを信じる</h4>
+            <p class="text-gray-700">足りないところではなく、今ある光に目を向け、信じ続ける</p>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="bg-white border-l-4 border-primary p-6 rounded-r-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-bold text-gray-900 mb-3">心と数字に寄り添う</h4>
+            <p class="text-gray-700">マインドだけでも、数字だけでもない。両方を支え、未来を描けるように伴走する</p>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="bg-white border-l-4 border-primary p-6 rounded-r-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-bold text-gray-900 mb-3">一緒に進む</h4>
+            <p class="text-gray-700">完成された誰かではなく、「今、ここにいるあなた」と歩幅を合わせる</p>
+          </div>
+
+          <!-- Value 4 -->
+          <div class="bg-white border-l-4 border-primary p-6 rounded-r-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-bold text-gray-900 mb-3">小さな一歩を祝福する</h4>
+            <p class="text-gray-700">大きな成功ではなく、踏み出したその勇気を心からたたえる</p>
+          </div>
+
+          <!-- Value 5 -->
+          <div class="bg-white border-l-4 border-primary p-6 rounded-r-lg hover:shadow-lg transition">
+            <h4 class="text-xl font-bold text-gray-900 mb-3">挑戦の途中を宝物にする</h4>
+            <p class="text-gray-700">過程そのものに価値を見出し、挑戦の記録を一生ものの財産に変えていく</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONCERNS SECTION ===== -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16 scroll-animation">
+        こんなお悩みありませんか？
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <!-- Concern 1 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation">
+          <div class="flex items-start">
+            <i class="fas fa-check text-primary text-2xl mr-4 mt-1"></i>
+            <p class="text-gray-700 text-lg">
+              税理士には相談しているが、経営判断の相談相手がいない
+            </p>
+          </div>
+        </div>
+
+        <!-- Concern 2 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation">
+          <div class="flex items-start">
+            <i class="fas fa-check text-primary text-2xl mr-4 mt-1"></i>
+            <p class="text-gray-700 text-lg">
+              資金繰りが不安で、攻めの投資に踏み切れない
+            </p>
+          </div>
+        </div>
+
+        <!-- Concern 3 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation">
+          <div class="flex items-start">
+            <i class="fas fa-check text-primary text-2xl mr-4 mt-1"></i>
+            <p class="text-gray-700 text-lg">
+              忙しすぎて、自分の人生を考える時間がない
+            </p>
+          </div>
+        </div>
+
+        <!-- Concern 4 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation">
+          <div class="flex items-start">
+            <i class="fas fa-check text-primary text-2xl mr-4 mt-1"></i>
+            <p class="text-gray-700 text-lg">
+              社長業が孤独で、本音を話せる相手がいない
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIFFERENCE SECTION ===== -->
+  <section id="difference" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4 scroll-animation">
+        顧問税理士と社外CFOの違い
+      </h2>
+      <p class="text-center text-gray-600 text-lg mb-16 scroll-animation">
+        税理士は「守り」の専門家。社外CFOは未来の数字をつくる「戦略」の専門家です。
+      </p>
+
+      <!-- Desktop Table -->
+      <div class="hidden md:block overflow-x-auto scroll-animation">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border border-gray-300 px-6 py-4 text-left font-bold text-gray-900">比較項目</th>
+              <th class="border border-gray-300 px-6 py-4 text-left font-bold text-gray-900">一般的な顧問税理士</th>
+              <th class="border border-gray-300 px-6 py-4 text-left font-bold text-white bg-primary">ビズワクの社外CFO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-300 px-6 py-4 font-semibold text-gray-700 bg-gray-100">視点の軸</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700">過去（実績の集計・報告）</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700 bg-green-50">未来（将来予測・戦略立案）</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-6 py-4 font-semibold text-gray-700 bg-gray-100">主なミッション</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700">適正な納税、正確な記帳</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700 bg-green-50">企業価値向上・投資の最大化</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-6 py-4 font-semibold text-gray-700 bg-gray-100">経営へのアプローチ</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700">「節税・納税」の視点</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700 bg-green-50">「成長・投資・意思決定」の視点</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-6 py-4 font-semibold text-gray-700 bg-gray-100">コミュニケーション</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700">事後報告、税務相談が中心</td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700 bg-green-50">経営陣の一員としての並走</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Version -->
+      <div class="md:hidden space-y-4 scroll-animation">
+        <div class="bg-accent rounded-lg p-6">
+          <h4 class="font-bold text-gray-900 mb-4">視点の軸</h4>
+          <p class="text-gray-700 mb-2"><span class="font-semibold">顧問税理士：</span> 過去（実績の集計・報告）</p>
+          <p class="text-gray-700"><span class="font-semibold text-primary">社外CFO：</span> 未来（将来予測・戦略立案）</p>
+        </div>
+        <div class="bg-accent rounded-lg p-6">
+          <h4 class="font-bold text-gray-900 mb-4">主なミッション</h4>
+          <p class="text-gray-700 mb-2"><span class="font-semibold">顧問税理士：</span> 適正な納税、正確な記帳</p>
+          <p class="text-gray-700"><span class="font-semibold text-primary">社外CFO：</span> 企業価値向上・投資の最大化</p>
+        </div>
+        <div class="bg-accent rounded-lg p-6">
+          <h4 class="font-bold text-gray-900 mb-4">経営へのアプローチ</h4>
+          <p class="text-gray-700 mb-2"><span class="font-semibold">顧問税理士：</span> 「節税・納税」の視点</p>
+          <p class="text-gray-700"><span class="font-semibold text-primary">社外CFO：</span> 「成長・投資・意思決定」の視点</p>
+        </div>
+        <div class="bg-accent rounded-lg p-6">
+          <h4 class="font-bold text-gray-900 mb-4">コミュニケーション</h4>
+          <p class="text-gray-700 mb-2"><span class="font-semibold">顧問税理士：</span> 事後報告、税務相談が中心</p>
+          <p class="text-gray-700"><span class="font-semibold text-primary">社外CFO：</span> 経営陣の一員としての並走</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16 scroll-animation">
+        ビズワクCFOの特徴
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation">
+          <div class="text-5xl text-primary mb-6 text-center">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 text-center mb-2">
+            数字を、未来を描く武器に変える
+          </h3>
+          <p class="text-gray-600 text-center text-sm font-semibold mb-4">
+            意思決定のナビゲート
+          </p>
+          <p class="text-gray-700 text-center">
+            過去の記録で終わらせない。予測と戦略で、社長が自信を持って次の一手を打てるよう支えます。
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation">
+          <div class="text-5xl text-primary mb-6 text-center">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 text-center mb-2">
+            経営と人生、両方の幸せを設計する
+          </h3>
+          <p class="text-gray-600 text-center text-sm font-semibold mb-4">
+            幸せの最大化を追求
+          </p>
+          <p class="text-gray-700 text-center">
+            利益だけでなく、社長が思い描く理想の人生を含めて設計。プロコーチ資格を持つ代表が、双方の幸せが最大化する道筋を共に歩みます。
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation">
+          <div class="text-5xl text-primary mb-6 text-center">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 text-center mb-2">
+            税理士歴15年、事業会社での実務経験
+          </h3>
+          <p class="text-gray-600 text-center text-sm font-semibold mb-4">
+            圧倒的な現場・専門知見
+          </p>
+          <p class="text-gray-700 text-center">
+            理屈だけではない、現場の苦労や感覚を理解した「生きた財務戦略」を提供します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE SECTION ===== -->
+  <section id="service" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16 scroll-animation">
+        サービス内容
+      </h2>
+
+      <!-- Onboarding Support -->
+      <div class="mb-16 scroll-animation">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">導入サポート</h3>
+        <div class="bg-accent rounded-lg p-8 sm:p-12">
+          <p class="text-lg font-bold text-gray-900 mb-2">
+            導入サポート（初回のみ）
+          </p>
+          <p class="text-3xl font-bold text-primary mb-8">
+            全体で30万円（税抜）
+          </p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center">
+              <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-center font-bold text-sm">1</span>
+              <span class="ml-4 text-gray-700">関係性づくり（60分）</span>
+              <i class="fas fa-arrow-down text-primary ml-auto hidden sm:block"></i>
+            </div>
+            <div class="hidden sm:flex justify-center text-primary mb-2">
+              <i class="fas fa-arrow-down text-2xl"></i>
+            </div>
+            <div class="flex items-center">
+              <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-center font-bold text-sm">2</span>
+              <span class="ml-4 text-gray-700">個人ビジョン（90分）</span>
+              <i class="fas fa-arrow-down text-primary ml-auto hidden sm:block"></i>
+            </div>
+            <div class="hidden sm:flex justify-center text-primary mb-2">
+              <i class="fas fa-arrow-down text-2xl"></i>
+            </div>
+            <div class="flex items-center">
+              <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-center font-bold text-sm">3</span>
+              <span class="ml-4 text-gray-700">会社ビジョン（90分）</span>
+              <i class="fas fa-arrow-down text-primary ml-auto hidden sm:block"></i>
+            </div>
+            <div class="hidden sm:flex justify-center text-primary mb-2">
+              <i class="fas fa-arrow-down text-2xl"></i>
+            </div>
+            <div class="flex items-center">
+              <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-center font-bold text-sm">4</span>
+              <span class="ml-4 text-gray-700">事業計画1年分（120分）</span>
+              <i class="fas fa-arrow-down text-primary ml-auto hidden sm:block"></i>
+            </div>
+            <div class="hidden sm:flex justify-center text-primary mb-2">
+              <i class="fas fa-arrow-down text-2xl"></i>
+            </div>
+            <div class="flex items-center">
+              <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-center font-bold text-sm">5</span>
+              <span class="ml-4 text-gray-700">アクションプラン設計（90分）</span>
+            </div>
+          </div>
+
+          <p class="text-gray-700 border-t border-gray-300 pt-8">
+            <span class="font-semibold">ふわっとしたビジョンが数字で測れ、行動で進む「経営の設計図」に変わる。</span><br>
+            ビズワクにしかない、唯一無二の寄り添い開始プランです。
+          </p>
+        </div>
+      </div>
+
+      <!-- Continuous Support -->
+      <div class="scroll-animation">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">継続サポート</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Light Plan -->
+          <div class="bg-accent rounded-lg p-8 hover:shadow-lg transition">
+            <h4 class="text-2xl font-bold text-gray-900 mb-2">
+              ライトCFOプラン
+            </h4>
+            <p class="text-3xl font-bold text-primary mb-6">
+              月額20万円<span class="text-lg text-gray-600">（税抜）〜</span>
+            </p>
+            <p class="text-gray-700 font-semibold mb-6 text-sm">
+              最低限必要なところだけ！専門家による右腕ライトプラン
+            </p>
+
+            <div class="mb-6">
+              <p class="font-bold text-gray-900 mb-3">含まれるサービス内容：</p>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>経営ミーティング（1回60分×月1回）</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>エグゼクティブコーチング・壁打ち・NLP・個性心理学診断など</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>数字の見える化（着地・資金繰り・納税予測）</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>財務チェック（資金繰り・未来予測・投資判断など）</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>市場調査、ビジネスモデル調査</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>人のお繋ぎ</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>チャット相談無制限</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="font-bold text-gray-900 mb-3">追加オプション：</p>
+              <ul class="space-y-1 text-gray-700 text-sm">
+                <li>・融資サポート（資金調達・銀行提出資料作成）</li>
+                <li>・内製化や効率化の実装</li>
+                <li>・セミナーや営業資料作成</li>
+                <li>・コーチングスキルレクチャー</li>
+                <li>・新規事業の収支シミュレーション</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Full Plan -->
+          <div class="bg-white border-2 border-primary rounded-lg p-8 hover:shadow-lg transition">
+            <h4 class="text-2xl font-bold text-gray-900 mb-2">
+              社外CFOプラン
+            </h4>
+            <p class="text-3xl font-bold text-primary mb-6">
+              月額50万円<span class="text-lg text-gray-600">（税抜）〜</span>
+            </p>
+            <p class="text-gray-700 font-semibold mb-6 text-sm">
+              代表2名のノウハウと経験全てを溢れさせた本気の右腕プラン
+            </p>
+
+            <div class="mb-6">
+              <p class="font-bold text-gray-900 mb-3">含まれるサービス内容：</p>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>経営ミーティング（1回60分×隔週2回）</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>エグゼクティブコーチング・壁打ち・NLP・個性心理学診断など</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>数字の見える化（着地・資金繰り・納税予測）</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>財務チェック（資金繰り・未来予測・投資判断など）</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>市場調査、ビジネスモデル調査</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>人のお繋ぎ</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>チャット相談無制限</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>融資サポート（資金調達・銀行提出資料作成）</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>内製化や効率化の実装</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>セミナーや営業資料作成</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>コーチングスキルレクチャー</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-2">✓</span>
+                  <span>新規事業の収支シミュレーション</span>
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-gray-600 text-xs">※工数によっては別途お見積り</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING SECTION ===== -->
+  <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
+    <div class="max-w-2xl mx-auto text-center scroll-animation">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+        透明性のある料金体系
+      </h2>
+
+      <div class="bg-white rounded-lg p-8 sm:p-12 shadow-sm">
+        <p class="text-gray-700 text-lg mb-6">
+          前年度売上の<span class="font-bold text-primary">3%</span>を12ヶ月で按分した金額を月額報酬としていただきます。
+        </p>
+        <p class="text-gray-700 text-lg mb-8">
+          会社の状況に応じて、ミーティング回数での調整も可能です。
+        </p>
+
+        <div class="bg-gray-100 rounded-lg p-6 mb-8">
+          <p class="font-semibold text-gray-900 text-lg mb-3">金額の目安：</p>
+          <p class="text-2xl font-bold text-primary">
+            月5万円〜最高 月50万円
+          </p>
+          <p class="text-gray-600 text-sm">
+            （会社の状況をお伺いした上でご提示します）
+          </p>
+        </div>
+
+        <div class="border-t border-gray-300 pt-8">
+          <p class="font-semibold text-gray-900 text-lg mb-4">導入サポート：</p>
+          <p class="text-3xl font-bold text-primary mb-2">
+            初回のみ 30万円（税抜）
+          </p>
+          <p class="text-gray-600 text-sm mb-4">
+            関係性づくり → 個人ビジョン → 会社ビジョン → 事業計画 → アクションプラン
+          </p>
+          <p class="text-gray-700 font-semibold">
+            最短1ヶ月で経営の土台をつくる、ビズワク独自のプログラム
+          </p>
+        </div>
+
+        <div class="border-t border-gray-300 mt-8 pt-8">
+          <p class="text-gray-600 text-sm">
+            <span class="font-semibold">※</span>会計入力・振込などの実務作業は、社内スタッフにお願いしております
+          </p>
+          <p class="text-gray-600 text-sm mt-2">
+            <span class="font-semibold">※</span>創業期は更にお得なプランや、税理士顧問セット割引あり
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROFILE SECTION ===== -->
+  <section id="profile" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16 scroll-animation">
+        代表紹介
+      </h2>
+
+      <!-- Profiles -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 scroll-animation">
+        <!-- NAO -->
+        <div class="text-center">
+          <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-300 flex items-center justify-center">
+            <i class="fas fa-user text-gray-500 text-6xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">
+            二田水尚（Nitamizu Nao）
+          </h3>
+          <div class="bg-accent rounded-lg p-6 text-left">
+            <ul class="text-gray-700 space-y-2 text-sm">
+              <li>早稲田大学商学部卒</li>
+              <li>税理士（登録番号146409）</li>
+              <li>税理士法人・マイナビ経理部を経て</li>
+              <li>令和6年 エグゼクティブコーチング開始</li>
+              <li>令和7年 株式会社ビズワク設立</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MIKA -->
+        <div class="text-center">
+          <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-300 flex items-center justify-center">
+            <i class="fas fa-user text-gray-500 text-6xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">
+            吉永美香（Yoshinaga Mika）
+          </h3>
+          <div class="bg-accent rounded-lg p-6 text-left">
+            <ul class="text-gray-700 space-y-2 text-sm">
+              <li>学習院大学卒</li>
+              <li>税理士（登録番号152917）</li>
+              <li>税理士法人・クレディセゾン財務経理部を経て</li>
+              <li>令和6年 CFO養成講座受講</li>
+              <li>令和7年 株式会社ビズワク設立</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mb-16 scroll-animation">
+        <p class="text-lg text-gray-700 font-semibold">
+          二人合わせて法人約100社以上、個人事業主50人以上のサポート経験あり
+        </p>
+      </div>
+
+      <!-- Why This Work -->
+      <div class="scroll-animation">
+        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-12 text-center">
+          なぜこの仕事を
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8">
+          <!-- NAO's Story -->
+          <div class="bg-accent rounded-lg p-8">
+            <h4 class="text-xl font-bold text-primary mb-4">NAOの想い</h4>
+            <p class="text-gray-700 leading-relaxed">
+              なおは、第二子を生後2日で亡くしました。<br><br>
+              自分らしさを崩壊し、どん底だった日々を救ったのは、<br>
+              自分の内なる声と、大切な人たちとの深い繋がりでした。<br><br>
+              人生は一度きり。いろんな役割の前にひとりの人間として、<br>
+              自分の人生自分らしく生き切ってほしいと強く願うようになりました。
+            </p>
+          </div>
+
+          <!-- MIKA's Story -->
+          <div class="bg-accent rounded-lg p-8">
+            <h4 class="text-xl font-bold text-primary mb-4">MIKAの想い</h4>
+            <p class="text-gray-700 leading-relaxed">
+              みかは、会社を経営していた父の姿を間近で見て育ちました。<br><br>
+              ある日、父が倒れ、会社が止まりかけました。<br>
+              「社長が倒れたら、会社も人も止まる」<br><br>
+              その現実に、胸を締めつけられる想いをしました。<br>
+              「あの時父のそばに、なんでも相談できる右腕がいたら。」<br>
+              安心して経営できる環境を。あの時の想いが今の私の原点です。
+            </p>
+          </div>
+        </div>
+
+        <!-- Closing Message -->
+        <div class="bg-gradient-to-r from-primary from-10% to-green-50 rounded-lg p-8 sm:p-12 text-white">
+          <p class="text-lg leading-relaxed">
+            経営とは、たった一人の"社長"にかかっていることがあまりに多い。<br><br>
+            でも、本当は—経営の隣に、"全部を話せる相手"がいていいはずなんです。<br><br>
+            私たちは、税務や数字の専門家である前に、<br>
+            痛みを知る一人の人間として、<br>
+            <span class="font-bold">"その人が、その人らしく経営できること"を、本気で支えたい。</span><br><br>
+            この仕事は、私たちにとって「使命」です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VOICE SECTION ===== -->
+  <section id="voice" class="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16 scroll-animation">
+        お客様の声
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Voice 1 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation relative">
+          <div class="absolute top-6 left-6 text-4xl text-primary opacity-20">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="text-gray-700 mb-6 pt-8 leading-relaxed">
+            「孤独で迷っていたとき、全部本音で話せる伴走者ができて安心。どんなアイデアもまず肯定してくれて、『どう実現できるか』から会話が始まるので、次の一歩が楽しみになりました。」
+          </p>
+          <p class="text-gray-600 text-sm font-semibold">
+            40代／サービス業経営
+          </p>
+        </div>
+
+        <!-- Voice 2 -->
+        <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-lg transition scroll-animation relative">
+          <div class="absolute top-6 left-6 text-4xl text-primary opacity-20">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="text-gray-700 mb-6 pt-8 leading-relaxed">
+            「頭の中がぐちゃぐちゃで優先順位が決められなかったけど、整理してもらったら、やるべき順番が明確に。想いを数字に落とし込み、行動まで決まるので、自信を持って進めます！」
+          </p>
+          <p class="text-gray-600 text-sm font-semibold">
+            30代／女性経営者
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA SECTION ===== -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 btn-primary">
+    <div class="max-w-2xl mx-auto text-center scroll-animation">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+        まずは1時間、お話ししませんか？
+      </h2>
+      <p class="text-lg text-white mb-12 leading-relaxed">
+        ZoomまたはGoogle Meetで、御社の状況をお聞かせください。<br>
+        社外CFOが合うかどうか、率直にお伝えします。
+      </p>
+      <a href="contact.html" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-base sm:text-lg hover:shadow-lg transition hover:bg-gray-100">
+        まず1時間、無料で話してみる
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-xl font-bold text-primary mb-4">株式会社ビズワク</h3>
+          <ul class="text-gray-400 text-sm space-y-2">
+            <li>代表：二田水尚、吉永美香</li>
+          </ul>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h3 class="font-bold text-white mb-4">リンク</h3>
+          <ul class="text-gray-400 text-sm space-y-2">
+            <li><a href="#" class="hover:text-primary transition">プライバシーポリシー</a></li>
+            <li><a href="#" class="hover:text-primary transition">特定商取引法に基づく表記</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <!-- SNS -->
+        <div>
+          <h3 class="font-bold text-white mb-4">SNS</h3>
+          <ul class="text-gray-400 text-sm space-y-2">
+            <li>
+              <a href="https://note.com/bizwaku" target="_blank" class="hover:text-primary transition">
+                <i class="fab fa-note mr-2"></i>note
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 Bizwaku Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Scroll animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-animation').forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
