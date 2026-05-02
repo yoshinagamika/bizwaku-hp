@@ -20,18 +20,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* === フォント設定 === */
+    /* === フォント設定（湘南クラウド風：全体を明朝体で統一） === */
     body,
+    h1, h2, h3, h4, h5, h6,
     p, li, a, span, button, input, select, textarea, label, th, td, div {
-      font-family: 'Noto Sans JP', sans-serif;
+      font-family: 'Noto Serif JP', "Hiragino Mincho ProN", "游明朝", serif;
     }
 
-    h1, h2, h3 {
-      font-family: 'Noto Serif JP', serif;
-    }
-
-    h1 {
-      font-weight: 400;
+    h1, h2, h3, h4 {
+      font-weight: 500;
     }
 
     /* Font Awesome は除外 */
@@ -45,11 +42,17 @@
     }
 
     body {
-      color: #333333;
-      letter-spacing: 0.02em;
+      color: #2c2c2c;
+      letter-spacing: 0.04em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    .text-gray-900 { color: #1a1a1a !important; }
+    .text-gray-800 { color: #2c2c2c !important; }
+    .text-gray-700 { color: #3a3a3a !important; }
+    .text-gray-600 { color: #5a5a5a !important; }
+    .text-gray-500 { color: #888888 !important; }
 
     .text-primary { color: #B0CC3B; }
     .bg-primary { background-color: #B0CC3B; }
@@ -132,26 +135,27 @@
 
     .consult-bubble {
       position: absolute;
-      top: 100%;
-      right: 0;
-      margin-top: 10px;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
       background-color: #B0CC3B;
       color: white;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
-      padding: 5px 14px;
-      border-radius: 6px;
+      padding: 4px 10px;
+      border-radius: 4px;
       white-space: nowrap;
-      box-shadow: 0 2px 8px rgba(176, 204, 59, 0.3);
+      box-shadow: 0 2px 8px rgba(176, 204, 59, 0.25);
     }
     .consult-bubble::before {
       content: '';
       position: absolute;
-      top: -6px;
-      right: 24px;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-bottom: 6px solid #B0CC3B;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #B0CC3B;
     }
   </style>
 </head>
@@ -165,13 +169,12 @@
       </a>
 
       <div class="hidden lg:flex items-center space-x-10">
-        <a href="index.html#profile" class="nav-link text-gray-700 text-sm font-medium tracking-wider">About</a>
+        <a href="index.html#thoughts" class="nav-link text-gray-700 text-sm font-medium tracking-wider">About</a>
         <a href="index.html#thoughts" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Story</a>
         <a href="index.html#service" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Service</a>
+        <a href="index.html#faq" class="nav-link text-gray-700 text-sm font-medium tracking-wider">FAQ</a>
         <div class="relative">
-          <a href="contact.html" class="btn-primary text-white px-6 py-2.5 rounded-full font-medium text-sm tracking-wider">
-            Contact
-          </a>
+          <a href="contact.html" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Contact</a>
           <span class="consult-bubble">無料相談やってます</span>
         </div>
       </div>
@@ -183,12 +186,11 @@
 
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
       <div class="px-4 py-4 space-y-1">
-        <a href="index.html#profile" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">About</a>
+        <a href="index.html#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">About</a>
         <a href="index.html#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Story</a>
         <a href="index.html#service" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Service</a>
-        <a href="contact.html" class="block btn-primary text-white px-4 py-3 rounded-full font-medium text-center mt-3 tracking-wider">
-          Contact
-        </a>
+        <a href="index.html#faq" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">FAQ</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Contact</a>
         <p class="text-center text-xs text-primary mt-2">無料相談やってます</p>
       </div>
     </div>
