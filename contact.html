@@ -14,16 +14,30 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Google Fonts: Noto Sans JP -->
+  <!-- Google Fonts: Noto Serif JP (見出し) + Noto Sans JP (本文) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    * {
+    /* === フォント設定 === */
+    body,
+    p, li, a, span, button, input, select, textarea, label, th, td, div {
       font-family: 'Noto Sans JP', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    h1 {
+      font-weight: 400;
+    }
+
+    /* Font Awesome は除外 */
+    .fa, .fas, .far, .fab, .fal, .fad,
+    [class^="fa-"], [class*=" fa-"] {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
     }
 
     html {
@@ -33,6 +47,8 @@
     body {
       color: #333333;
       letter-spacing: 0.02em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .text-primary { color: #B0CC3B; }
@@ -124,12 +140,12 @@
       </a>
 
       <div class="hidden lg:flex items-center space-x-8">
-        <a href="index.html#thoughts" class="nav-link text-gray-700 text-sm font-medium">想い</a>
-        <a href="index.html#service" class="nav-link text-gray-700 text-sm font-medium">サービス</a>
+        <a href="index.html#thoughts" class="nav-link text-gray-700 text-sm font-medium">ストーリー</a>
+        <a href="index.html#service" class="nav-link text-gray-700 text-sm font-medium">サービス内容</a>
         <a href="index.html#difference" class="nav-link text-gray-700 text-sm font-medium">税理士との違い</a>
-        <a href="index.html#profile" class="nav-link text-gray-700 text-sm font-medium">プロフィール</a>
+        <a href="index.html#profile" class="nav-link text-gray-700 text-sm font-medium">代表紹介</a>
         <a href="index.html#pricing" class="nav-link text-gray-700 text-sm font-medium">料金</a>
-        <a href="index.html#faq" class="nav-link text-gray-700 text-sm font-medium">FAQ</a>
+        <a href="index.html#faq" class="nav-link text-gray-700 text-sm font-medium">よくいただくご質問</a>
         <a href="contact.html" class="btn-primary text-white px-6 py-2.5 rounded-full font-medium text-sm">
           お問い合わせ
         </a>
@@ -142,12 +158,12 @@
 
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
       <div class="px-4 py-4 space-y-1">
-        <a href="index.html#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2">想い</a>
-        <a href="index.html#service" class="block text-gray-700 hover:text-primary transition py-3 px-2">サービス</a>
+        <a href="index.html#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2">ストーリー</a>
+        <a href="index.html#service" class="block text-gray-700 hover:text-primary transition py-3 px-2">サービス内容</a>
         <a href="index.html#difference" class="block text-gray-700 hover:text-primary transition py-3 px-2">税理士との違い</a>
-        <a href="index.html#profile" class="block text-gray-700 hover:text-primary transition py-3 px-2">プロフィール</a>
+        <a href="index.html#profile" class="block text-gray-700 hover:text-primary transition py-3 px-2">代表紹介</a>
         <a href="index.html#pricing" class="block text-gray-700 hover:text-primary transition py-3 px-2">料金</a>
-        <a href="index.html#faq" class="block text-gray-700 hover:text-primary transition py-3 px-2">FAQ</a>
+        <a href="index.html#faq" class="block text-gray-700 hover:text-primary transition py-3 px-2">よくいただくご質問</a>
         <a href="contact.html" class="block btn-primary text-white px-4 py-3 rounded-full font-medium text-center mt-3">
           お問い合わせ
         </a>
