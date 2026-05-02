@@ -14,25 +14,20 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Google Fonts: Noto Serif JP (見出し) + Noto Sans JP (本文) -->
+  <!-- Google Fonts: Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* === フォント設定（湘南クラウド風：全体を明朝体で統一） === */
+    /* === フォント設定（Noto Sans JPで統一） === */
     body,
     h1, h2, h3, h4, h5, h6,
     p, li, a, span, button, input, select, textarea, label, th, td, div {
-      font-family: 'Noto Serif JP', "Hiragino Mincho ProN", "游明朝", serif;
+      font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "游ゴシック", "Yu Gothic", sans-serif;
     }
 
-    /* 数字・英字は柔らかいゴシック */
-    .text-num {
-      font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", sans-serif;
-    }
-
-    /* 見出しは細め、本文は標準 */
+    /* 見出しは標準ウェイト */
     h1, h2, h3, h4 {
       font-weight: 500;
     }
@@ -373,7 +368,7 @@
 
       <!-- 重ねるコピー -->
       <div class="relative h-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center">
-        <h1 class="text-gray-900" style="font-family: 'Noto Serif JP', serif; font-weight: 400; line-height: 2.2; letter-spacing: 0.08em;">
+        <h1 class="text-gray-900" style="font-weight: 400; line-height: 2.2; letter-spacing: 0.08em;">
           <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">経営にも、</span>
           <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">人生にも、</span>
           <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
@@ -506,10 +501,20 @@
   <!-- ===== CONCERNS SECTION ===== -->
   <section class="py-20 lg:py-32 bg-white overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 scroll-animation">
+      <div class="text-center mb-12 scroll-animation">
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900" style="line-height: 1.6;">
           もしかして、<br class="md:hidden">こんな夜を<br class="md:hidden">過ごしていませんか？
         </h2>
+      </div>
+
+      <!-- イラスト（中央寄せ・レスポンシブ） -->
+      <div class="text-center mb-12 md:mb-16 scroll-animation">
+        <img
+          src="images/concern-illustration.png"
+          alt="経営に悩む経営者のイラスト"
+          class="mx-auto w-full h-auto"
+          style="max-width: 480px;"
+        >
       </div>
 
       <div class="space-y-5 md:space-y-6 scroll-animation">
