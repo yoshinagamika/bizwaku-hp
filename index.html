@@ -133,12 +133,13 @@
     .nav-link {
       position: relative;
       transition: color 0.3s ease;
+      padding-bottom: 6px;
     }
 
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: 0;
       left: 50%;
       width: 0;
       height: 2px;
@@ -153,6 +154,31 @@
 
     .nav-link:hover::after {
       width: 100%;
+    }
+
+    /* お問い合わせボタンの下の吹き出し */
+    .consult-bubble {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 10px;
+      background-color: #B0CC3B;
+      color: white;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(176, 204, 59, 0.3);
+    }
+    .consult-bubble::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      right: 24px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid #B0CC3B;
     }
 
     /* ヒーロー写真：縦長を爽やかにトリミング */
@@ -290,15 +316,16 @@
         <img src="images/logo.png" alt="ビズワク" class="h-10 sm:h-12">
       </a>
 
-      <div class="hidden lg:flex items-center space-x-8">
-        <a href="#thoughts" class="nav-link text-gray-700 text-sm font-medium">ストーリー</a>
-        <a href="#service" class="nav-link text-gray-700 text-sm font-medium">サービス</a>
-        <a href="#profile" class="nav-link text-gray-700 text-sm font-medium">代表紹介</a>
-        <a href="#pricing" class="nav-link text-gray-700 text-sm font-medium">料金</a>
-        <a href="#faq" class="nav-link text-gray-700 text-sm font-medium">よくいただくご質問</a>
-        <a href="contact.html" class="btn-primary text-white px-6 py-2.5 rounded-full font-medium text-sm">
-          お問い合わせ
-        </a>
+      <div class="hidden lg:flex items-center space-x-10">
+        <a href="#profile" class="nav-link text-gray-700 text-sm font-medium tracking-wider">About</a>
+        <a href="#thoughts" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Story</a>
+        <a href="#service" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Service</a>
+        <div class="relative">
+          <a href="contact.html" class="btn-primary text-white px-6 py-2.5 rounded-full font-medium text-sm tracking-wider">
+            Contact
+          </a>
+          <span class="consult-bubble">無料相談やってます</span>
+        </div>
       </div>
 
       <button class="lg:hidden text-gray-700 text-2xl" id="mobile-menu-btn" aria-label="メニューを開く">
@@ -308,65 +335,36 @@
 
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
       <div class="px-4 py-4 space-y-1">
-        <a href="#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2">ストーリー</a>
-        <a href="#service" class="block text-gray-700 hover:text-primary transition py-3 px-2">サービス</a>
-        <a href="#profile" class="block text-gray-700 hover:text-primary transition py-3 px-2">代表紹介</a>
-        <a href="#pricing" class="block text-gray-700 hover:text-primary transition py-3 px-2">料金</a>
-        <a href="#faq" class="block text-gray-700 hover:text-primary transition py-3 px-2">よくいただくご質問</a>
-        <a href="contact.html" class="block btn-primary text-white px-4 py-3 rounded-full font-medium text-center mt-3">
-          お問い合わせ
+        <a href="#profile" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">About</a>
+        <a href="#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Story</a>
+        <a href="#service" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Service</a>
+        <a href="contact.html" class="block btn-primary text-white px-4 py-3 rounded-full font-medium text-center mt-3 tracking-wider">
+          Contact
         </a>
+        <p class="text-center text-xs text-primary mt-2">無料相談やってます</p>
       </div>
     </div>
   </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section class="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-soft opacity-50 rounded-bl-[200px]"></div>
+  <section class="relative overflow-hidden pt-20 lg:pt-24">
+    <div class="relative h-[600px] md:h-[680px] lg:h-[720px]">
+      <!-- 背景写真 -->
+      <img src="images/together.jpg" alt="ビズワク代表 二田水尚と吉永美香" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 35%;">
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-[3fr_2fr] gap-10 lg:gap-14 items-center">
-        <!-- Left: Text -->
-        <div class="relative z-10">
-          <div class="inline-block speech-bubble bg-primary text-white text-sm font-medium px-5 py-2 rounded-full mb-6">
-            売上1〜5億円のオーナー経営者へ
-          </div>
+      <!-- 白系オーバーレイ（左側を読みやすく） -->
+      <div class="absolute inset-0" style="background: linear-gradient(110deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 35%, rgba(255,255,255,0.15) 60%, rgba(255,255,255,0) 100%);"></div>
 
-          <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-bold text-gray-900 mb-8 lg:whitespace-nowrap" style="line-height: 1.4; letter-spacing: 0.01em;">
-            「もう一人」がいる会社は、強い。
-          </h1>
-
-          <p class="text-lg sm:text-xl text-gray-700 font-medium mb-10" style="line-height: 1.9;">
-            その隣に立つのが、<br class="sm:hidden">
-            私たち<span class="text-primary font-bold">ビズワク</span>です。
-          </p>
-
-          <div class="border-l-2 border-primary pl-5 mb-10">
-            <p class="text-base text-gray-700" style="line-height: 1.9;">
-              経営にも、人生にも、<br class="sm:hidden">
-              <span class="font-medium">余白をつくる伴走を。</span>
-            </p>
-          </div>
-
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="contact.html" class="inline-flex items-center justify-center btn-primary text-white px-8 py-4 rounded-full font-bold">
-              <i class="fas fa-comments mr-2"></i>
-              まず1時間、無料で話してみる
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: Image -->
-        <div class="relative z-10">
-          <div class="relative">
-            <div class="absolute -top-6 -left-6 w-full h-full bg-soft rounded-organic"></div>
-            <div class="relative rounded-organic shadow-2xl overflow-hidden" style="height: 500px;">
-              <img src="images/together.jpg" alt="ビズワク代表 二田水尚と吉永美香" class="hero-img">
-            </div>
-          </div>
-        </div>
+      <!-- 重ねるコピー -->
+      <div class="relative h-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center">
+        <h1 class="text-gray-900" style="font-family: 'Noto Serif JP', serif; font-weight: 400; line-height: 2.2; letter-spacing: 0.08em;">
+          <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">経営にも、</span>
+          <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">人生にも、</span>
+          <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
+            <span class="text-primary">余白</span>をつくる
+          </span>
+        </h1>
       </div>
-
     </div>
   </section>
 
