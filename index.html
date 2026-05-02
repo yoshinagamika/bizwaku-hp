@@ -250,6 +250,35 @@
       border-radius: 999px;
       margin-bottom: 4px;
     }
+
+    /* === ふわふわ浮遊アニメーション（Concernセクション） === */
+    @keyframes float-soft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .float-1 { animation: float-soft 5s ease-in-out infinite; }
+    .float-2 { animation: float-soft 6s ease-in-out infinite 0.5s; }
+    .float-3 { animation: float-soft 7s ease-in-out infinite 1s; }
+    .float-4 { animation: float-soft 5.5s ease-in-out infinite 1.5s; }
+    .float-5 { animation: float-soft 6.5s ease-in-out infinite 0.3s; }
+
+    .concern-bubble {
+      display: inline-block;
+      background-color: #F4F8E8;
+      color: #5a5248;
+      padding: 14px 28px;
+      border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(176, 204, 59, 0.12);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    @media (max-width: 640px) {
+      .concern-bubble {
+        padding: 12px 20px;
+        border-radius: 24px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body class="bg-white">
@@ -413,7 +442,7 @@
   </section>
 
   <!-- ===== CONCERNS SECTION ===== -->
-  <section class="py-20 lg:py-32 bg-white">
+  <section class="py-20 lg:py-32 bg-white overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 scroll-animation">
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900" style="line-height: 1.6;">
@@ -421,38 +450,43 @@
         </h2>
       </div>
 
-      <div class="space-y-5 scroll-animation">
-        <div class="bg-light rounded-3xl p-8 md:p-10">
-          <p class="text-gray-800 text-lg" style="line-height: 1.9;">
-            「数字の話はできても、<br class="md:hidden">"判断"を相談できる人がいない」
-          </p>
+      <div class="space-y-5 md:space-y-6 scroll-animation">
+        <div class="flex justify-start pl-0 md:pl-4 float-1">
+          <span class="concern-bubble">
+            税理士には相談しているが、経営判断の相談相手がいない
+          </span>
         </div>
 
-        <div class="bg-light rounded-3xl p-8 md:p-10">
-          <p class="text-gray-800 text-lg" style="line-height: 1.9;">
-            「攻めたいのに、<br class="md:hidden">資金繰りの不安がブレーキになる」
-          </p>
+        <div class="flex justify-end pr-0 md:pr-8 float-2">
+          <span class="concern-bubble">
+            資金繰りが不安で、攻めの投資に踏み切れない
+          </span>
         </div>
 
-        <div class="bg-light rounded-3xl p-8 md:p-10">
-          <p class="text-gray-800 text-lg" style="line-height: 1.9;">
-            「忙しさの中で、<br class="md:hidden">自分の人生はどこに行ったのかと、ふと思う」
-          </p>
+        <div class="flex justify-center float-3">
+          <span class="concern-bubble">
+            数字は見ているが、何をすべきかわからない
+          </span>
         </div>
 
-        <div class="bg-light rounded-3xl p-8 md:p-10">
-          <p class="text-gray-800 text-lg" style="line-height: 1.9;">
-            「成功も、悩みも、<br class="md:hidden">本音で話せる相手がいない」
-          </p>
+        <div class="flex justify-start pl-0 md:pl-12 float-4">
+          <span class="concern-bubble">
+            忙しすぎて、自分の人生はどこに向かってるのかと、ふと思う
+          </span>
+        </div>
+
+        <div class="flex justify-end pr-0 md:pr-4 float-5">
+          <span class="concern-bubble">
+            社長業が孤独で、本音を話せる相手がいない
+          </span>
         </div>
       </div>
 
-      <div class="mt-16 scroll-animation">
-        <p class="text-base md:text-lg text-gray-700 text-center" style="line-height: 2.1;">
-          その感覚は、<br class="md:hidden">ここまで会社を育ててきた、<br>
-          <span class="text-gray-900 font-medium">あなたの証拠です。</span>
+      <div class="mt-20 scroll-animation">
+        <p class="text-base md:text-lg text-gray-700 text-center" style="line-height: 2;">
+          その感覚は、ここまで会社を育ててきた、<span class="text-gray-900 font-medium">あなたの証拠です。</span>
         </p>
-        <p class="text-base md:text-lg text-gray-700 text-center mt-6" style="line-height: 2.1;">
+        <p class="text-base md:text-lg text-gray-700 text-center mt-6" style="line-height: 2;">
           だからこそ、<span class="text-primary font-bold">"もう一人"</span>がいる経営を、<br class="md:hidden">
           考えてみませんか。
         </p>
