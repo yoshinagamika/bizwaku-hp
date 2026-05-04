@@ -14,10 +14,10 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Google Fonts: Noto Sans JP -->
+  <!-- Google Fonts: Noto Sans JP + Yusei Magic（手書き風） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Yusei+Magic&display=swap" rel="stylesheet">
 
   <style>
     /* === フォント設定（Noto Sans JPで統一） === */
@@ -330,7 +330,7 @@
       </a>
 
       <div class="hidden lg:flex items-center space-x-10">
-        <a href="#thoughts" class="nav-link text-gray-700 text-sm font-medium tracking-wider">About</a>
+        <a href="#about" class="nav-link text-gray-700 text-sm font-medium tracking-wider">About</a>
         <a href="#thoughts" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Story</a>
         <a href="#service" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Service</a>
         <a href="#faq" class="nav-link text-gray-700 text-sm font-medium tracking-wider">FAQ</a>
@@ -347,7 +347,7 @@
 
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
       <div class="px-4 py-4 space-y-1">
-        <a href="#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">About</a>
+        <a href="#about" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">About</a>
         <a href="#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Story</a>
         <a href="#service" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Service</a>
         <a href="#faq" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">FAQ</a>
@@ -363,18 +363,38 @@
       <!-- 背景写真 -->
       <img src="images/together.jpg" alt="ビズワク代表 二田水尚と吉永美香" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 35%;">
 
-      <!-- 白系オーバーレイ（左側を読みやすく） -->
-      <div class="absolute inset-0" style="background: linear-gradient(110deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 35%, rgba(255,255,255,0.15) 60%, rgba(255,255,255,0) 100%);"></div>
+      <!-- 緑系オーバーレイ（左側を少し暗くして白文字を映えさせる） -->
+      <div class="absolute inset-0" style="background: linear-gradient(110deg, rgba(76, 96, 28, 0.55) 0%, rgba(102, 130, 38, 0.4) 30%, rgba(176, 204, 59, 0.15) 60%, rgba(255,255,255,0) 100%);"></div>
 
-      <!-- 重ねるコピー -->
+      <!-- 重ねるコピー（白文字・手書き風） -->
       <div class="relative h-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center">
-        <h1 class="text-gray-900" style="font-weight: 400; line-height: 2.2; letter-spacing: 0.08em;">
+        <h1 class="text-white" style="font-family: 'Yusei Magic', 'Noto Sans JP', cursive; font-weight: 400; line-height: 1.9; letter-spacing: 0.06em; text-shadow: 0 2px 16px rgba(0,0,0,0.25);">
           <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">経営にも、</span>
           <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl">人生にも、</span>
-          <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">
-            <span class="text-primary">余白</span>をつくる
-          </span>
+          <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2">余白をつくる</span>
         </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION（What's ビズワク？） ===== -->
+  <section id="about" class="py-20 lg:py-32 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <p class="text-sm text-primary font-medium tracking-widest mb-3">ABOUT</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+          What's ビズワク？
+        </h2>
+      </div>
+
+      <div class="scroll-animation">
+        <p class="text-gray-700 text-base md:text-lg" style="line-height: 2.2;">
+          ビズワクは、経営者の想いを数字で支え、未来へ進む力に変える社外CFOです。<br>
+          売上や利益だけでなく、理念、人生、働き方まで大切にしながら、<br class="hidden md:block">
+          会社のこれからを一緒に考えます。<br><br>
+          一人で抱え込む経営から、信頼できる右腕とともに進む経営へ。<br>
+          お金の不安を安心に変え、あなたらしい挑戦が続いていく土台をつくります。
+        </p>
       </div>
     </div>
   </section>
