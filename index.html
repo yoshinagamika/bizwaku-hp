@@ -418,7 +418,7 @@
     </div>
   </section>
 
-  <!-- ===== STORY SECTION（代表紹介） ===== -->
+  <!-- ===== PROFILE SECTION（代表紹介） ===== -->
   <section id="thoughts" class="py-20 lg:py-32 bg-light">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 scroll-animation">
@@ -429,76 +429,47 @@
         <div class="leaf-accent">. . . .</div>
       </div>
 
-      <!-- ▼ なお -->
-      <div class="mb-20 lg:mb-24 scroll-animation">
-        <div class="grid md:grid-cols-[2fr_3fr] gap-8 lg:gap-12 items-start">
-          <!-- 写真と名前 -->
-          <div class="text-center md:text-left">
-            <div class="relative mb-6 inline-block">
-              <div class="absolute -top-4 -left-4 w-full h-full bg-soft rounded-organic"></div>
-              <img src="images/nao.jpg" alt="二田水尚" class="relative rounded-organic w-full max-w-sm shadow-xl">
-            </div>
-            <h3 class="text-2xl text-gray-900 mb-1" style="font-weight: 500;">
-              二田水尚
-            </h3>
-            <p class="text-sm text-primary mb-6">Nitamizu Nao</p>
-            <ul class="text-gray-600 space-y-2 text-sm text-left max-w-sm mx-auto md:mx-0" style="line-height: 1.8;">
-              <li>早稲田大学商学部卒</li>
-              <li>税理士（登録番号146409）</li>
-              <li>税理士法人・マイナビ経理部を経て</li>
-              <li>令和6年 エグゼクティブコーチング開始</li>
-              <li>令和7年 株式会社ビズワク設立</li>
-            </ul>
-          </div>
-          <!-- 想い -->
-          <div class="bg-white rounded-organic p-8 md:p-10">
-            <p class="text-xs text-primary font-medium tracking-widest mb-4">なおの想い</p>
-            <p class="text-gray-700" style="line-height: 2.1;">
-              なおは、第二子を生後2日で亡くしました。<br><br>
-              自分らしさを崩壊し、どん底だった日々を救ったのは、自分の内なる声と、大切な人たちとの深い繋がりでした。<br><br>
-              人生は一度きり。いろんな役割の前にひとりの人間として、自分の人生自分らしく生き切ってほしいと強く願うようになりました。
-            </p>
-          </div>
-        </div>
-      </div>
+      <!-- 代表ふたり 横並び -->
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16 scroll-animation">
 
-      <!-- ▼ みか -->
-      <div class="mb-20 lg:mb-24 scroll-animation">
-        <div class="grid md:grid-cols-[3fr_2fr] gap-8 lg:gap-12 items-start">
-          <!-- 想い -->
-          <div class="bg-white rounded-organic p-8 md:p-10 order-2 md:order-1">
-            <p class="text-xs text-primary font-medium tracking-widest mb-4">みかの想い</p>
-            <p class="text-gray-700" style="line-height: 2.1;">
-              みかは、会社を経営していた父の姿を間近で見て育ちました。<br><br>
-              ある日、父が倒れ、会社が止まりかけました。<br>
-              「社長が倒れたら、会社も人も止まる」<br><br>
-              その現実に、胸を締めつけられる想いをしました。「あの時父のそばに、なんでも相談できる右腕がいたら。」<br>
-              安心して経営できる環境を。あの時の想いが今の私の原点です。
-            </p>
+        <!-- NAO -->
+        <div class="bg-white rounded-organic p-8 md:p-10 text-center hover-lift">
+          <div class="relative inline-block mb-6">
+            <div class="absolute -top-3 -left-3 w-full h-full bg-soft rounded-organic"></div>
+            <img src="images/nao.jpg" alt="二田水尚" class="relative rounded-organic w-full max-w-xs shadow-lg">
           </div>
-          <!-- 写真と名前 -->
-          <div class="text-center md:text-left order-1 md:order-2">
-            <div class="relative mb-6 inline-block">
-              <div class="absolute -top-4 -right-4 w-full h-full bg-soft rounded-organic"></div>
-              <img src="images/mika.jpg" alt="吉永美香" class="relative rounded-organic w-full max-w-sm shadow-xl">
-            </div>
-            <h3 class="text-2xl text-gray-900 mb-1" style="font-weight: 500;">
-              吉永美香
-            </h3>
-            <p class="text-sm text-primary mb-6">Yoshinaga Mika</p>
-            <ul class="text-gray-600 space-y-2 text-sm text-left max-w-sm mx-auto md:mx-0" style="line-height: 1.8;">
-              <li>学習院大学卒</li>
-              <li>税理士（登録番号152917）</li>
-              <li>税理士法人・クレディセゾン財務経理部を経て</li>
-              <li>令和6年 CFO養成講座受講</li>
-              <li>令和7年 株式会社ビズワク設立</li>
-            </ul>
-          </div>
+          <h3 class="text-xl text-gray-900 mb-1" style="font-weight: 500;">
+            二田水尚
+          </h3>
+          <p class="text-sm text-primary mb-6 tracking-wider">Nitamizu Nao</p>
+          <ul class="text-gray-700 space-y-2 text-sm" style="line-height: 1.8;">
+            <li>早稲田大学商学部卒</li>
+            <li>税理士（登録番号146409）</li>
+            <li>税理士法人・マイナビ経理部を経て独立</li>
+          </ul>
         </div>
+
+        <!-- MIKA -->
+        <div class="bg-white rounded-organic p-8 md:p-10 text-center hover-lift">
+          <div class="relative inline-block mb-6">
+            <div class="absolute -top-3 -right-3 w-full h-full bg-soft rounded-organic"></div>
+            <img src="images/mika.jpg" alt="吉永美香" class="relative rounded-organic w-full max-w-xs shadow-lg">
+          </div>
+          <h3 class="text-xl text-gray-900 mb-1" style="font-weight: 500;">
+            吉永美香
+          </h3>
+          <p class="text-sm text-primary mb-6 tracking-wider">Yoshinaga Mika</p>
+          <ul class="text-gray-700 space-y-2 text-sm" style="line-height: 1.8;">
+            <li>学習院大学卒</li>
+            <li>税理士（登録番号152917）</li>
+            <li>税理士法人・クレディセゾン財務経理部を経て独立</li>
+          </ul>
+        </div>
+
       </div>
 
       <!-- 実績バッジ -->
-      <div class="text-center mb-16 scroll-animation">
+      <div class="text-center mb-20 scroll-animation">
         <div class="inline-block bg-white rounded-full px-8 py-4 shadow-sm">
           <p class="text-gray-800">
             二人合わせて法人約100社以上、個人事業主50人以上のサポート経験あり
@@ -506,18 +477,61 @@
         </div>
       </div>
 
-      <!-- 締めの言葉 -->
-      <div class="bg-primary rounded-organic p-8 md:p-12 text-white text-center scroll-animation">
-        <p class="text-base md:text-lg" style="line-height: 2.2;">
-          経営とは、たった一人の"社長"にかかっていることがあまりに多い。<br><br>
-          でも、本当は—<br>
-          経営の隣に、<span style="font-weight: 500;">"全部を話せる相手"</span>がいていいはずなんです。<br><br>
-          私たちは、税務や数字の専門家である前に、痛みを知る一人の人間として、<br>
-          <span class="text-xl md:text-2xl block mt-3" style="font-weight: 500;">"その人が、その人らしく経営できること"</span>
-          <span class="block mt-2">を、本気で支えたい。</span><br>
-          <span style="font-weight: 500;">この仕事は、私たちにとって「使命」です。</span>
-        </p>
+      <!-- 想い -->
+      <div class="max-w-3xl mx-auto scroll-animation">
+        <div class="text-center mb-10">
+          <p class="text-sm text-primary font-medium tracking-widest mb-3">OUR THOUGHTS</p>
+          <h3 class="text-2xl sm:text-3xl text-gray-900" style="font-weight: 500;">
+            想い
+          </h3>
+          <div class="leaf-accent">. . . .</div>
+        </div>
+
+        <div class="bg-white rounded-organic p-8 md:p-12">
+          <p class="text-gray-700 text-base md:text-lg" style="line-height: 2.2;">
+            数字が見えない不安。<br>
+            相談できる人がいない孤独。<br>
+            本当は大切にしたい想いがあるのに、日々の判断に追われて<br class="hidden md:block">
+            後回しになってしまうもどかしさ。
+          </p>
+          <p class="text-gray-700 text-base md:text-lg mt-8" style="line-height: 2.2;">
+            誰かに相談したくても、会社のことも、お金のことも、<br class="hidden md:block">
+            自分の人生のことも、まとめて話せる相手は多くありません。
+          </p>
+          <p class="text-gray-700 text-base md:text-lg mt-8" style="line-height: 2.2;">
+            だからビズワクは、経営者の右腕として、<br class="hidden md:block">
+            数字と想いの両軸で、<br class="md:hidden">
+            安心して進める経営に向かって、<br>
+            未来の判断を一緒に支えます。
+          </p>
+
+          <div class="my-10 border-t border-gray-100"></div>
+
+          <ul class="space-y-4 text-gray-700 text-base md:text-lg" style="line-height: 1.9;">
+            <li class="flex items-start">
+              <span class="text-primary mr-3 mt-1.5 flex-shrink-0">●</span>
+              <span>不安をただ聞くだけではなく、<span class="text-primary" style="font-weight: 500;">数字で見える化</span>する。</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-3 mt-1.5 flex-shrink-0">●</span>
+              <span>理想を語るだけではなく、<span class="text-primary" style="font-weight: 500;">行動に落とし込む</span>。</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-3 mt-1.5 flex-shrink-0">●</span>
+              <span>会社の未来だけではなく、<span class="text-primary" style="font-weight: 500;">経営者自身の幸せ</span>も大切にする。</span>
+            </li>
+          </ul>
+
+          <div class="my-10 border-t border-gray-100"></div>
+
+          <p class="text-gray-700 text-base md:text-lg" style="line-height: 2.2;">
+            経営と人生に<span class="text-primary" style="font-weight: 500;">余白</span>が生まれたとき、<br>
+            きっと次の挑戦が自然と湧き上がってくる。<br><br>
+            私たちは、その瞬間を一緒につくりたいと思っています。
+          </p>
+        </div>
       </div>
+
     </div>
   </section>
 
