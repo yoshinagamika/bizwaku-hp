@@ -113,11 +113,17 @@
       margin-bottom: 12px;
     }
     .section-title {
-      font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      font-size: 1.375rem;
       font-weight: 700;
       color: var(--color-text);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       line-height: 1.5;
+    }
+    @media (min-width: 640px) {
+      .section-title { font-size: 1.625rem; letter-spacing: 0.06em; }
+    }
+    @media (min-width: 768px) {
+      .section-title { font-size: 2rem; letter-spacing: 0.08em; }
     }
     .section-divider {
       width: 40px;
@@ -251,8 +257,8 @@
   <!-- ===== (1) HERO（公園画像） ===== -->
   <section class="pt-20 lg:pt-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="w-full h-[320px] md:h-[420px] lg:h-[520px] overflow-hidden rounded-card shadow-md">
-        <img src="images/hero-2.png" alt="ビズワク" class="w-full h-full object-cover" style="object-position: center center;">
+      <div class="w-full h-[260px] sm:h-[340px] md:h-[420px] lg:h-[520px] overflow-hidden rounded-card shadow-md">
+        <img src="images/hero-2.png" alt="ビズワク" class="w-full h-full object-cover object-left md:object-center">
       </div>
     </div>
   </section>
@@ -314,37 +320,37 @@
           <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-yen-sign text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">売上はあるのに、<br>お金が残らない</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">売上はあるのに、お金が残らない</p>
         </div>
         <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
           <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-user-tie text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">税理士さんはいるけど、<br>経営判断は相談しづらい</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">税理士さんはいるけど、経営判断は相談しづらい</p>
         </div>
         <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
           <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-chart-line text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">採用や投資に、いくら<br>使えるかわからない</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">採用や投資に、いくら使えるかわからない</p>
         </div>
         <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
           <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-triangle-exclamation text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">資金繰りが<br>いつも不安</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">資金繰りがいつも不安</p>
         </div>
         <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
           <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-calculator text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">数字を見るのが<br>苦手</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">数字を見るのが苦手</p>
         </div>
         <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
           <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-heart text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">経営を安心して話せる<br>相手がほしい</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">経営を安心して話せる相手がほしい</p>
         </div>
       </div>
 
@@ -434,7 +440,7 @@
         <div class="card card-hover p-7 md:p-8">
           <span class="block text-3xl md:text-4xl font-bold text-primary mb-4">1</span>
           <h3 class="text-lg md:text-xl mb-3" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
-            お金の不安が、<br>見通しに変わる
+            お金の不安が、見通しに変わる
           </h3>
           <p class="text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
             資金繰りや利益計画を見える化し、安心して前に進める状態にします。
@@ -443,7 +449,7 @@
         <div class="card card-hover p-7 md:p-8">
           <span class="block text-3xl md:text-4xl font-bold text-primary mb-4">2</span>
           <h3 class="text-lg md:text-xl mb-3" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
-            数字が、経営判断の<br>味方になる
+            数字が、経営判断の味方になる
           </h3>
           <p class="text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
             数字を「わかりやすく・使いやすく」整理し、迷いなく意思決定できるようにします。
@@ -452,7 +458,7 @@
         <div class="card card-hover p-7 md:p-8">
           <span class="block text-3xl md:text-4xl font-bold text-primary mb-4">3</span>
           <h3 class="text-lg md:text-xl mb-3" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
-            ひとりで抱える経営から、<br>抜け出せる
+            ひとりで抱える経営から、抜け出せる
           </h3>
           <p class="text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
             伴走者がいることで、孤独や不安が減り、本業に集中できる環境をつくります。
@@ -475,19 +481,19 @@
           <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
             <i class="fas fa-user-plus text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">この採用をしても、<br>資金繰りは大丈夫？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">この採用をしても、資金繰りは大丈夫？</p>
         </div>
         <div class="card card-hover p-5 flex items-start gap-3">
           <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
             <i class="fas fa-bullhorn text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">広告費をどこまで<br>使っていい？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">広告費をどこまで使っていい？</p>
         </div>
         <div class="card card-hover p-5 flex items-start gap-3">
           <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
             <i class="fas fa-circle-question text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">利益が出ているのに、<br>お金が残らないのはなぜ？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">利益が出ているのに、お金が残らないのはなぜ？</p>
         </div>
         <div class="card card-hover p-5 flex items-start gap-3">
           <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
@@ -499,7 +505,7 @@
           <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
             <i class="fas fa-flag text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">新規事業を始める前に<br>数字を見たい</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">新規事業を始める前に数字を見たい</p>
         </div>
         <div class="card card-hover p-5 flex items-start gap-3">
           <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
@@ -568,7 +574,7 @@
           <div class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary text-white font-bold">1</div>
           <h3 class="text-base md:text-lg mb-3" style="color: var(--color-text); font-weight: 700;">無料相談</h3>
           <p class="text-xs md:text-sm mb-4" style="color: var(--color-text-soft); line-height: 1.9;">
-            ヒアリングを通じて、<br>お悩みや現状をお聞きします。
+            ヒアリングを通じて、お悩みや現状をお聞きします。
           </p>
           <a href="contact.html" class="btn-primary inline-flex items-center px-4 py-2 rounded-pill font-bold text-xs">
             <i class="fas fa-comments mr-1.5"></i>まず1時間、無料で話してみる
@@ -579,7 +585,7 @@
           <div class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary text-white font-bold">2</div>
           <h3 class="text-base md:text-lg mb-3" style="color: var(--color-text); font-weight: 700;">ご提案</h3>
           <p class="text-xs md:text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
-            課題整理と改善の方向性を<br>ご提案します。<br>お見積りもご提示します。
+            課題整理と改善の方向性をご提案します。お見積りもご提示します。
           </p>
         </div>
         <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
@@ -587,7 +593,7 @@
           <div class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary text-white font-bold">3</div>
           <h3 class="text-base md:text-lg mb-3" style="color: var(--color-text); font-weight: 700;">伴走スタート</h3>
           <p class="text-xs md:text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
-            ご納得いただけたら、<br>伴走支援を開始します。
+            ご納得いただけたら、伴走支援を開始します。
           </p>
         </div>
       </div>
@@ -738,11 +744,11 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
           <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
             <i class="fas fa-heart text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">足りないではなく、<br>あるを信じる</p>
+            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">足りないではなく、あるを信じる</p>
           </div>
           <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
             <i class="fas fa-chart-simple text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">「想い」と「数字」<br>に寄り添う</p>
+            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">「想い」と「数字」に寄り添う</p>
           </div>
           <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
             <i class="fas fa-users text-primary text-xl mb-3"></i>
@@ -750,15 +756,15 @@
           </div>
           <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
             <i class="fas fa-seedling text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">小さな一歩を<br>祝福する</p>
+            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">小さな一歩を祝福する</p>
           </div>
           <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
             <i class="fas fa-user text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">経営者の前に<br>ひとりの人間として<br>向き合う</p>
+            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">経営者の前にひとりの人間として向き合う</p>
           </div>
           <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
             <i class="fas fa-star text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">挑戦の途中を<br>宝物にする</p>
+            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">挑戦の途中を宝物にする</p>
           </div>
         </div>
         <p class="text-center text-sm mt-8" style="color: #5a5a5a;">
