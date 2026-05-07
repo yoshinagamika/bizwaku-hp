@@ -3,219 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ビズワク｜人生と経営に余白をつくる社外CFO</title>
-  <meta name="description" content="売上1〜5億円のオーナー経営者へ。コーチング財務で、想いと数字を統合し、経営と人生の両方を前に進める社外CFOサービス。">
+  <title>ビズワク｜お金の不安を、経営の見通しに変える社外CFO</title>
+  <meta name="description" content="ビズワクは、財務の専門性とコーチングをかけ合わせ、経営者が安心して意思決定できる状態をつくる社外CFOサービスです。">
 
   <link rel="icon" type="image/png" href="images/logo-icon.png">
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Google Fonts: Noto Sans JP + Yusei Magic（手書き風） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Yusei+Magic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* === フォント設定（Noto Sans JPで統一） === */
-    body,
-    h1, h2, h3, h4, h5, h6,
-    p, li, a, span, button, input, select, textarea, label, th, td, div {
+    body, h1, h2, h3, h4, h5, h6, p, li, a, span, button, input, select, textarea, label, th, td, div {
       font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "游ゴシック", "Yu Gothic", sans-serif;
     }
-
-    /* 見出しは標準ウェイト */
-    h1, h2, h3, h4 {
-      font-weight: 500;
-    }
-
-    /* Font Awesome は除外 */
-    .fa, .fas, .far, .fab, .fal, .fad,
-    [class^="fa-"], [class*=" fa-"] {
+    .fa, .fas, .far, .fab, .fal, .fad, [class^="fa-"], [class*=" fa-"] {
       font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
     }
 
-    /* === カラーパレット（統一） === */
+    :root {
+      --color-primary: #B0CC3B;
+      --color-primary-dark: #9BB52D;
+      --color-text: #1f2933;
+      --color-text-soft: #3a3a3a;
+      --color-mute: #888888;
+      --color-bg: #fbfaf4;
+      --color-bg-soft: #F4F8E8;
+      --color-border: #e7eadc;
+    }
+
     body {
-      color: #2c2c2c;
+      color: var(--color-text);
       letter-spacing: 0.04em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      background-color: #ffffff;
     }
+    h1, h2, h3, h4 { font-weight: 600; }
 
-    /* 文字色を3階層に整理 */
-    .text-heading { color: #1a1a1a; }
-    .text-body { color: #3a3a3a; }
-    .text-mute { color: #888888; }
+    html { scroll-behavior: smooth; }
 
-    /* tailwindのgrayクラスを上書きして揃える */
-    .text-gray-900 { color: #1a1a1a !important; }
-    .text-gray-800 { color: #2c2c2c !important; }
-    .text-gray-700 { color: #3a3a3a !important; }
-    .text-gray-600 { color: #5a5a5a !important; }
-    .text-gray-500 { color: #888888 !important; }
-    .text-gray-400 { color: #aaaaaa !important; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .text-primary { color: #B0CC3B; }
-    .bg-primary { background-color: #B0CC3B; }
-    .border-primary { border-color: #B0CC3B; }
-
-    .bg-light { background-color: #FAFBF5; }
-    .bg-soft { background-color: #F4F8E8; }
+    .text-primary { color: var(--color-primary); }
+    .bg-primary { background-color: var(--color-primary); }
+    .border-primary { border-color: var(--color-primary); }
+    .bg-cream { background-color: var(--color-bg); }
+    .bg-soft { background-color: var(--color-bg-soft); }
+    .border-soft { border: 1px solid var(--color-border); }
 
     .btn-primary {
-      background-color: #B0CC3B;
-      transition: all 0.3s ease;
+      background-color: var(--color-primary);
+      color: #ffffff;
+      transition: all 0.25s ease;
       box-shadow: 0 4px 14px rgba(176, 204, 59, 0.25);
     }
-
     .btn-primary:hover {
-      background-color: #9BB52D;
+      background-color: var(--color-primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(176, 204, 59, 0.4);
+      box-shadow: 0 6px 20px rgba(176, 204, 59, 0.35);
     }
 
     .scroll-animation {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
+      transform: translateY(24px);
+      transition: all 0.7s ease-out;
     }
+    .scroll-animation.visible { opacity: 1; transform: translateY(0); }
 
-    .scroll-animation.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .rounded-card { border-radius: 24px; }
+    @media (min-width: 768px) { .rounded-card { border-radius: 28px; } }
+    .rounded-pill { border-radius: 999px; }
 
-    .rounded-organic {
-      border-radius: 32px;
-    }
-
-    @media (min-width: 768px) {
-      .rounded-organic {
-        border-radius: 48px;
-      }
-    }
-
-    .speech-bubble {
-      position: relative;
-      display: inline-block;
-    }
-
-    .speech-bubble::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 10px solid #B0CC3B;
-    }
-
-    .leaf-accent {
-      display: inline-block;
-      color: #B0CC3B;
-      font-size: 1.5rem;
-      letter-spacing: 4px;
-      margin-top: 12px;
-    }
-
-    .compare-table {
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
       border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      transition: all 0.25s ease;
     }
-
-    .hover-lift {
-      transition: all 0.3s ease;
-    }
-
-    .hover-lift:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    .card-hover:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
     }
 
     .nav-link {
       position: relative;
-      transition: color 0.3s ease;
-      padding-bottom: 6px;
+      transition: color 0.2s ease;
+      color: var(--color-text);
     }
-
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -4px;
       left: 50%;
       width: 0;
       height: 2px;
-      background-color: #B0CC3B;
-      transition: all 0.3s ease;
+      background-color: var(--color-primary);
+      transition: all 0.25s ease;
       transform: translateX(-50%);
     }
+    .nav-link:hover { color: var(--color-primary); }
+    .nav-link:hover::after { width: 100%; }
 
-    .nav-link:hover {
-      color: #B0CC3B;
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--color-primary);
+      margin-bottom: 12px;
     }
-
-    .nav-link:hover::after {
-      width: 100%;
+    .section-title {
+      font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: 0.08em;
+      line-height: 1.5;
     }
-
-    /* Contactの下の吹き出し */
-    .consult-bubble {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #B0CC3B;
-      color: white;
-      font-size: 10px;
-      font-weight: 500;
-      padding: 4px 10px;
-      border-radius: 4px;
-      white-space: nowrap;
-      box-shadow: 0 2px 8px rgba(176, 204, 59, 0.25);
-    }
-    .consult-bubble::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-bottom: 5px solid #B0CC3B;
-    }
-
-    /* ヒーロー写真：縦長を爽やかにトリミング */
-    .hero-img {
-      object-fit: cover;
-      object-position: center 30%;
-      width: 100%;
-      height: 100%;
-      min-height: 480px;
-      max-height: 600px;
+    .section-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--color-primary);
+      margin: 18px auto 0;
+      border-radius: 2px;
     }
 
     /* === FAQ === */
-    .faq-item {
-      border-bottom: 1px solid #EFEDE5;
-    }
+    .faq-item { border-bottom: 1px solid var(--color-border); }
     .faq-q {
       width: 100%;
       background: none;
       border: none;
-      padding: 22px 0;
-      font-size: 15px;
+      padding: 18px 0;
+      font-size: 14px;
       font-weight: 500;
-      color: #333333;
+      color: var(--color-text);
       text-align: left;
       cursor: pointer;
       display: flex;
@@ -225,98 +146,67 @@
       line-height: 1.7;
       transition: color 0.2s;
     }
-    .faq-q:hover {
-      color: #B0CC3B;
-    }
+    .faq-q:hover { color: var(--color-primary); }
     .faq-icon {
       flex-shrink: 0;
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background-color: #F4F8E8;
+      background-color: var(--color-bg-soft);
       position: relative;
       transition: all 0.25s ease;
     }
-    .faq-icon::before,
-    .faq-icon::after {
+    .faq-icon::before, .faq-icon::after {
       content: '';
       position: absolute;
-      background: #B0CC3B;
+      background: var(--color-primary);
       border-radius: 1px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    .faq-icon::before {
-      width: 10px;
-      height: 2px;
-    }
-    .faq-icon::after {
-      width: 2px;
-      height: 10px;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-    .faq-item.is-open .faq-icon {
-      background-color: #B0CC3B;
-    }
-    .faq-item.is-open .faq-icon::before,
-    .faq-item.is-open .faq-icon::after {
-      background: #ffffff;
-    }
-    .faq-item.is-open .faq-icon::after {
-      transform: translate(-50%, -50%) rotate(90deg);
-      opacity: 0;
-    }
+    .faq-icon::before { width: 9px; height: 2px; }
+    .faq-icon::after { width: 2px; height: 9px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .faq-item.is-open .faq-icon { background-color: var(--color-primary); }
+    .faq-item.is-open .faq-icon::before, .faq-item.is-open .faq-icon::after { background: #ffffff; }
+    .faq-item.is-open .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
     .faq-a {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 2;
-      color: #5a5248;
-      padding: 4px 0 24px;
-      animation: faq-fadein 0.25s ease;
-    }
-    @keyframes faq-fadein {
-      from { opacity: 0; transform: translateY(-4px); }
-      to   { opacity: 1; transform: translateY(0); }
+      color: var(--color-text-soft);
+      padding: 4px 0 22px;
     }
     .faq-group-label {
       display: inline-block;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.12em;
-      color: #B0CC3B;
-      background-color: #F4F8E8;
-      padding: 6px 16px;
+      letter-spacing: 0.18em;
+      color: var(--color-primary);
+      background-color: var(--color-bg-soft);
+      padding: 6px 14px;
       border-radius: 999px;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
-    /* === ふわふわ浮遊アニメーション（Concernセクション） === */
-    @keyframes float-soft {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+    /* Step arrow */
+    .step-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-size: 22px;
     }
-    .float-1 { animation: float-soft 5s ease-in-out infinite; }
-    .float-2 { animation: float-soft 6s ease-in-out infinite 0.5s; }
-    .float-3 { animation: float-soft 7s ease-in-out infinite 1s; }
-    .float-4 { animation: float-soft 5.5s ease-in-out infinite 1.5s; }
-    .float-5 { animation: float-soft 6.5s ease-in-out infinite 0.3s; }
+    @media (max-width: 767px) {
+      .step-arrow { transform: rotate(90deg); padding: 8px 0; }
+    }
 
-    .concern-bubble {
-      display: inline-block;
-      background-color: #F4F8E8;
-      color: #5a5248;
-      padding: 14px 28px;
-      border-radius: 999px;
-      box-shadow: 0 4px 20px rgba(176, 204, 59, 0.12);
-      font-size: 15px;
-      line-height: 1.7;
+    /* Header CTA badge for mobile */
+    .header-cta-badge {
+      font-size: 12px;
+      padding: 8px 16px;
     }
-    @media (max-width: 640px) {
-      .concern-bubble {
-        padding: 12px 20px;
-        border-radius: 24px;
-        font-size: 13px;
-      }
+    @media (min-width: 1024px) {
+      .header-cta-badge { font-size: 13px; padding: 10px 20px; }
     }
   </style>
 </head>
@@ -324,287 +214,71 @@
 
   <!-- ===== HEADER ===== -->
   <header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center">
-        <img src="images/logo.png" alt="ビズワク" class="h-10 sm:h-12">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-3.5 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <img src="images/logo.png" alt="ビズワク" class="h-9 sm:h-10">
+        <span class="hidden sm:inline-block text-xs lg:text-sm" style="color: #5a5a5a; letter-spacing: 0.1em;">経営と人生に余白をつくる</span>
       </a>
 
-      <div class="hidden lg:flex items-center space-x-10">
-        <a href="#about" class="nav-link text-gray-700 text-sm font-medium tracking-wider">About</a>
-        <a href="#thoughts" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Story</a>
-        <a href="#service" class="nav-link text-gray-700 text-sm font-medium tracking-wider">Service</a>
-        <a href="#faq" class="nav-link text-gray-700 text-sm font-medium tracking-wider">FAQ</a>
-        <a href="contact.html" class="nav-link relative text-gray-700 text-sm font-medium tracking-wider">
-          Contact
-          <span class="consult-bubble">無料相談やってます</span>
-        </a>
+      <div class="hidden lg:flex items-center gap-7 ml-auto mr-6">
+        <a href="#about" class="nav-link text-sm font-medium tracking-wider">About</a>
+        <a href="#story" class="nav-link text-sm font-medium tracking-wider">Story</a>
+        <a href="#service" class="nav-link text-sm font-medium tracking-wider">Service</a>
+        <a href="#faq" class="nav-link text-sm font-medium tracking-wider">FAQ</a>
+        <a href="contact.html" class="nav-link text-sm font-medium tracking-wider">Contact</a>
       </div>
 
-      <button class="lg:hidden text-gray-700 text-2xl" id="mobile-menu-btn" aria-label="メニューを開く">
+      <a href="contact.html" class="hidden md:inline-flex btn-primary header-cta-badge font-bold rounded-pill items-center whitespace-nowrap">
+        <i class="fas fa-comments mr-2"></i>まず1時間、無料で話してみる
+      </a>
+
+      <button class="lg:hidden text-2xl ml-auto" id="mobile-menu-btn" aria-label="メニューを開く" style="color: #3a3a3a;">
         <i class="fas fa-bars"></i>
       </button>
     </nav>
 
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
-      <div class="px-4 py-4 space-y-1">
-        <a href="#about" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">About</a>
-        <a href="#thoughts" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Story</a>
-        <a href="#service" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Service</a>
-        <a href="#faq" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">FAQ</a>
-        <a href="contact.html" class="block text-gray-700 hover:text-primary transition py-3 px-2 tracking-wider">Contact</a>
-        <p class="text-center text-xs text-primary mt-2">無料相談やってます</p>
+      <div class="px-4 py-3 space-y-1">
+        <a href="#about" class="block py-2.5 px-2 text-sm tracking-wider hover:text-primary" style="color: #3a3a3a;">About</a>
+        <a href="#story" class="block py-2.5 px-2 text-sm tracking-wider hover:text-primary" style="color: #3a3a3a;">Story</a>
+        <a href="#service" class="block py-2.5 px-2 text-sm tracking-wider hover:text-primary" style="color: #3a3a3a;">Service</a>
+        <a href="#faq" class="block py-2.5 px-2 text-sm tracking-wider hover:text-primary" style="color: #3a3a3a;">FAQ</a>
+        <a href="contact.html" class="block py-2.5 px-2 text-sm tracking-wider hover:text-primary" style="color: #3a3a3a;">Contact</a>
+        <a href="contact.html" class="btn-primary block text-center mt-3 py-3 rounded-pill font-bold text-sm">
+          <i class="fas fa-comments mr-2"></i>まず1時間、無料で話してみる
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="pt-20 lg:pt-24">
+  <!-- ===== (1) ファーストビュー ===== -->
+  <section id="about" class="pt-24 lg:pt-28 pb-12 lg:pb-16" style="background-color: var(--color-bg);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="hero w-full h-[320px] md:h-[420px] lg:h-[520px] overflow-hidden rounded-organic">
-        <img src="images/hero-copy.png" alt="ビズワク" class="w-full h-full object-cover" style="object-position: center center;">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT SECTION（What's ビズワク？） ===== -->
-  <section id="about" class="py-20 lg:py-32 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-16 scroll-animation">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
-          What's ビズワク？
-        </h2>
-      </div>
-
-      <!-- 2カラム：左にコンセプト、右に説明文 -->
-      <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center scroll-animation">
-
-        <!-- 左ブロック：Business × ワクワク -->
-        <div class="bg-light rounded-organic p-10 md:p-12 text-center">
-          <img src="images/logo-icon.png" alt="ビズワク アイコン" class="w-20 md:w-24 mx-auto mb-6">
-          <p class="text-2xl md:text-3xl text-gray-900 mb-6" style="letter-spacing: 0.05em; font-weight: 500;">
-            <span class="text-primary">Business</span>
-            <span class="mx-2 md:mx-4 text-gray-400" style="font-weight: 400;">×</span>
-            <span class="text-primary">ワクワク</span>
-          </p>
-          <p class="text-base md:text-lg text-gray-700" style="line-height: 2; font-weight: 500;">
-            <span class="text-primary" style="font-weight: 500;">枠</span>を超えて、<br>
-            ありのままが<span class="text-primary" style="font-weight: 500;">湧</span>き出る経営を
-          </p>
-        </div>
-
-        <!-- 右ブロック：説明文 -->
-        <div>
-          <p class="text-gray-700 text-base md:text-lg" style="line-height: 2.2;">
-            ビズワクは、経営者の想いを数字で支え、未来へ進む力に変える社外CFOです。<br>
-            売上や利益だけでなく、理念、人生、働き方まで大切にしながら、会社のこれからを一緒に考えます。<br><br>
-            一人で抱え込む経営から、信頼できる右腕とともに進む経営へ。<br>
-            お金の不安を安心に変え、あなたらしい挑戦が続いていく土台をつくります。
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROFILE SECTION（代表紹介） ===== -->
-  <section id="thoughts" class="py-20 lg:py-32" style="background-color: #fbfaf4;">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- ヘッダー -->
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <p class="text-sm text-primary font-medium tracking-widest mb-3">PROFILE</p>
-        <h2 class="text-3xl sm:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.15em;">代表紹介</h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
-        <p class="mt-7 text-base md:text-lg max-w-2xl mx-auto" style="color: #3a3a3a; line-height: 2;">
-          経営の数字と、経営者の想い。<br class="md:hidden">
-          どちらにも寄り添いながら、前に進む力を一緒に育てていきます。
-        </p>
-      </div>
-
-      <!-- 実績エリア -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto mb-16 lg:mb-20 scroll-animation">
-        <div class="bg-white rounded-3xl p-6 md:p-7 flex items-center gap-5 shadow-sm" style="border: 1px solid #e7eadc;">
-          <div class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
-            <i class="fas fa-building text-primary text-xl"></i>
-          </div>
-          <div>
-            <p class="text-xs mb-1" style="color: #5a5a5a;">法人の支援実績</p>
-            <p style="color: #1f2933;"><span class="text-3xl md:text-4xl font-bold">100</span><span class="text-sm ml-1.5">社以上</span></p>
-          </div>
-        </div>
-        <div class="bg-white rounded-3xl p-6 md:p-7 flex items-center gap-5 shadow-sm" style="border: 1px solid #e7eadc;">
-          <div class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
-            <i class="fas fa-user text-primary text-xl"></i>
-          </div>
-          <div>
-            <p class="text-xs mb-1" style="color: #5a5a5a;">個人事業主サポート</p>
-            <p style="color: #1f2933;"><span class="text-3xl md:text-4xl font-bold">100</span><span class="text-sm ml-1.5">名以上</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- プロフィールカード 2名 -->
-      <div class="grid md:grid-cols-2 gap-8 lg:gap-10 mb-16 lg:mb-20 scroll-animation">
-
-        <!-- NAO -->
-        <article class="bg-white rounded-[28px] p-6 md:p-8 shadow-md transition hover:shadow-lg hover:-translate-y-1 duration-300" style="border: 1px solid #e7eadc;">
-          <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3]">
-            <img src="images/nao.jpg" alt="二田水尚" class="w-full h-full object-cover">
-          </div>
-          <div class="text-center mb-5">
-            <h3 class="text-2xl mb-1" style="color: #1f2933; font-weight: 500; letter-spacing: 0.3em; padding-left: 0.3em;">二田水 尚</h3>
-            <p class="text-xs text-primary tracking-[0.25em]">Nitamizu Nao</p>
-          </div>
-          <p class="text-primary text-center mb-5 text-base" style="font-weight: 500; line-height: 1.7;">
-            想いとエネルギーを引き出す、<br class="md:hidden">感情の翻訳者。
-          </p>
-          <p class="text-sm mb-6" style="color: #3a3a3a; line-height: 2;">
-            コーチングを通じて、その人の本音やまだ言葉になっていない想いを引き出し、前に進む力へと変えていきます。感情に寄り添いながら、ワクワクを行動につなげる伴走者です。
-          </p>
-          <!-- キーワード -->
-          <div class="pt-5 mb-5" style="border-top: 1px solid #e7eadc;">
-            <p class="text-xs text-center mb-3" style="color: #888888;">— ワクワクのキーワード —</p>
-            <div class="flex flex-wrap justify-center gap-2">
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">童心</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">つながり</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">自由</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">ユーモア</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">変顔</span>
-            </div>
-          </div>
-          <!-- 経歴 -->
-          <ul class="text-xs space-y-1.5" style="color: #5a5a5a; line-height: 1.9;">
-            <li>・早稲田大学商学部卒</li>
-            <li>・税理士（登録番号146409）</li>
-            <li>・CPCCプロコーチ</li>
-            <li>・税理士法人・マイナビ経理部を経て独立</li>
-          </ul>
-        </article>
-
-        <!-- MIKA -->
-        <article class="bg-white rounded-[28px] p-6 md:p-8 shadow-md transition hover:shadow-lg hover:-translate-y-1 duration-300" style="border: 1px solid #e7eadc;">
-          <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3]">
-            <img src="images/mika.jpg" alt="吉永美香" class="w-full h-full object-cover">
-          </div>
-          <div class="text-center mb-5">
-            <h3 class="text-2xl mb-1" style="color: #1f2933; font-weight: 500; letter-spacing: 0.3em; padding-left: 0.3em;">吉永 美香</h3>
-            <p class="text-xs text-primary tracking-[0.25em]">Yoshinaga Mika</p>
-          </div>
-          <p class="text-primary text-center mb-5 text-base" style="font-weight: 500; line-height: 1.7;">
-            持続可能な経営を目指す伴走者。
-          </p>
-          <p class="text-sm mb-6" style="color: #3a3a3a; line-height: 2;">
-            資金繰りや投資判断の視点から、今の状況を整理しながら「どこまで挑戦できるか」を一緒に見える化します。数字と想いの両面から、続けられる経営を支えます。
-          </p>
-          <div class="pt-5 mb-5" style="border-top: 1px solid #e7eadc;">
-            <p class="text-xs text-center mb-3" style="color: #888888;">— ワクワクのキーワード —</p>
-            <div class="flex flex-wrap justify-center gap-2">
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">縁</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">すっきり</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">発見</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">進化</span>
-              <span class="text-xs px-3.5 py-1.5 rounded-full" style="background-color: #F4F8E8; color: #3a3a3a;">ドキドキ</span>
-            </div>
-          </div>
-          <ul class="text-xs space-y-1.5" style="color: #5a5a5a; line-height: 1.9;">
-            <li>・学習院大学法学部卒</li>
-            <li>・税理士（登録番号152917）</li>
-            <li>・税理士法人・クレディセゾン財務経理部を経て独立</li>
-          </ul>
-        </article>
-
-      </div>
-
-      <!-- ビズワクが大切にしていること -->
-      <div class="bg-white rounded-[28px] p-6 md:p-10 lg:p-12 shadow-sm mb-12 scroll-animation" style="border: 1px solid #e7eadc;">
-        <div class="text-center mb-8 lg:mb-10">
-          <h3 class="text-lg md:text-xl inline-flex items-center gap-3" style="color: #1f2933; font-weight: 500;">
-            <span class="text-primary text-sm">✿</span>
-            ビズワクが大切にしていること
-            <span class="text-primary text-sm">✿</span>
-          </h3>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-          <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-            <i class="fas fa-heart text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">足りないではなく、<br>あるを信じる</p>
-          </div>
-          <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-            <i class="fas fa-chart-simple text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">「想い」と「数字」<br>に寄り添う</p>
-          </div>
-          <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-            <i class="fas fa-users text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">一緒に進む</p>
-          </div>
-          <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-            <i class="fas fa-seedling text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">小さな一歩を<br>祝福する</p>
-          </div>
-          <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-            <i class="fas fa-user text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">経営者の前に<br>ひとりの人間として<br>向き合う</p>
-          </div>
-          <div class="rounded-2xl p-4 md:p-5 text-center transition hover:-translate-y-0.5 duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-            <i class="fas fa-star text-primary text-xl mb-3"></i>
-            <p class="text-xs md:text-[13px]" style="color: #3a3a3a; line-height: 1.6;">挑戦の途中を<br>宝物にする</p>
-          </div>
-        </div>
-        <p class="text-center text-sm mt-8" style="color: #5a5a5a;">
-          <span class="text-primary">〜</span>　遠慮より、本音を大切にする　<span class="text-primary">〜</span>
-        </p>
-      </div>
-
-      <!-- CTAエリア -->
-      <div class="rounded-[28px] p-7 md:p-10 scroll-animation relative overflow-hidden" style="background: linear-gradient(135deg, #F4F8E8 0%, #FAFBF5 100%); border: 1px solid #e7eadc;">
-        <div class="absolute top-2 right-2 text-primary opacity-30 text-5xl pointer-events-none"><i class="fas fa-seedling"></i></div>
-        <div class="grid md:grid-cols-[1fr_auto] gap-6 items-center relative">
-          <div>
-            <h3 class="text-xl md:text-2xl mb-3" style="color: #1f2933; font-weight: 500; line-height: 1.6;">
-              まずは、今の状況を聞かせてください
-            </h3>
-            <p class="text-sm md:text-base" style="color: #3a3a3a; line-height: 1.9;">
-              整理できていなくても大丈夫です。<br>
-              今感じている不安や、これからの方向性を一緒に整理します。
-            </p>
-          </div>
-          <a href="contact.html" class="btn-primary text-white px-8 py-3.5 rounded-full font-bold text-sm whitespace-nowrap inline-flex items-center justify-center">
-            無料相談はこちら
-            <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== SERVICE SECTION（リデザイン） ===== -->
-  <!-- (1) ファーストビュー -->
-  <section id="service" class="pt-20 lg:pt-24" style="background-color: #fbfaf4;">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center scroll-animation">
-        <div>
-          <p class="text-sm text-primary font-medium tracking-widest mb-4">SERVICE</p>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-6" style="color: #1f2933; font-weight: 600; line-height: 1.5; letter-spacing: 0.05em;">
+      <div class="grid lg:grid-cols-[1fr_1.05fr] gap-8 lg:gap-12 items-center">
+        <div class="scroll-animation">
+          <p class="section-label">SERVICE</p>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-6" style="color: var(--color-text); font-weight: 700; line-height: 1.45; letter-spacing: 0.05em;">
             お金の不安を、<br>
             経営の<span class="text-primary">見通し</span>に変える。
-          </h2>
-          <p class="mb-6 text-base md:text-lg" style="color: #3a3a3a; line-height: 2;">
-            ビズワクの社外CFOは、財務の専門性とコーチングをかけ合わせ、<br class="hidden lg:block">
-            経営者が安心して意思決定できる状態をつくる伴走サービスです。
+          </h1>
+          <p class="mb-5 text-base md:text-lg" style="color: var(--color-text-soft); line-height: 2;">
+            ビズワクは、財務の専門性とコーチングをかけ合わせ、<br class="hidden md:block">
+            経営者が安心して意思決定できる状態をつくる社外CFOです。
           </p>
-          <p class="mb-8 text-base md:text-lg text-primary" style="font-weight: 500; line-height: 1.8;">
-            こんな人、こんなサポートがほしかった。
+          <p class="mb-5 text-sm" style="color: var(--color-mute); letter-spacing: 0.15em;">
+            ― 経営と人生に余白をつくる ―
           </p>
-          <a href="contact.html" class="btn-primary text-white inline-flex items-center px-8 py-4 rounded-full font-bold text-sm md:text-base">
-            <i class="fas fa-comments mr-2"></i>
-            無料相談を予約する
-            <i class="fas fa-arrow-right ml-2"></i>
+          <p class="mb-7 text-base md:text-lg text-primary" style="font-weight: 600; line-height: 1.8;">
+            "こんな人、こんなサポートがほしかった。"
+          </p>
+          <a href="contact.html" class="btn-primary inline-flex items-center px-8 py-4 rounded-pill font-bold text-sm md:text-base">
+            <i class="fas fa-comments mr-2"></i>まず1時間、無料で話してみる
+            <i class="fas fa-arrow-right ml-3"></i>
           </a>
-          <p class="mt-3 text-xs" style="color: #888888;">契約前提でなくても大丈夫です</p>
+          <p class="mt-3 text-xs" style="color: var(--color-mute);">契約前提でなくても大丈夫です</p>
         </div>
-        <div class="relative">
-          <div class="overflow-hidden rounded-organic shadow-md aspect-[4/3]">
+        <div class="scroll-animation">
+          <div class="overflow-hidden rounded-card shadow-md aspect-[4/3] lg:aspect-[5/4]">
             <img src="images/together.jpg" alt="ビズワクの伴走サービス" class="w-full h-full object-cover">
           </div>
         </div>
@@ -612,738 +286,676 @@
     </div>
   </section>
 
-  <!-- (2) こんなお悩み、ありませんか？ -->
-  <section class="py-20 lg:py-28 bg-white">
+  <!-- ===== (2) 信頼の帯 ===== -->
+  <section class="py-10 lg:py-12 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">
-          こんなお悩み、ありませんか？
-        </h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 scroll-animation">
+        <div class="card p-4 md:p-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-soft">
+            <i class="fas fa-building text-primary text-sm"></i>
+          </div>
+          <div>
+            <p class="text-[10px] md:text-xs" style="color: var(--color-mute);">法人の支援実績</p>
+            <p class="font-bold text-sm md:text-base" style="color: var(--color-text);">100社以上</p>
+          </div>
+        </div>
+        <div class="card p-4 md:p-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-soft">
+            <i class="fas fa-user text-primary text-sm"></i>
+          </div>
+          <div>
+            <p class="text-[10px] md:text-xs" style="color: var(--color-mute);">個人事業主サポート</p>
+            <p class="font-bold text-sm md:text-base" style="color: var(--color-text);">100名以上</p>
+          </div>
+        </div>
+        <div class="card p-4 md:p-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-soft">
+            <i class="fas fa-handshake-angle text-primary text-sm"></i>
+          </div>
+          <div>
+            <p class="text-[10px] md:text-xs" style="color: var(--color-mute);">税理士 × コーチング</p>
+            <p class="font-bold text-sm md:text-base" style="color: var(--color-text);">の専門チーム</p>
+          </div>
+        </div>
+        <div class="card p-4 md:p-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-soft">
+            <i class="fas fa-laptop text-primary text-sm"></i>
+          </div>
+          <div>
+            <p class="text-[10px] md:text-xs" style="color: var(--color-mute);">オンライン対応可</p>
+            <p class="font-bold text-sm md:text-base" style="color: var(--color-text);">全国対応</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== (3) こんなお悩み ===== -->
+  <section class="py-16 lg:py-24" style="background-color: var(--color-bg);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-10 scroll-animation">
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10 scroll-animation">
+        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-yen-sign text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: #3a3a3a; line-height: 1.7;">売上はあるのに、<br>お金が残らない</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">売上はあるのに、<br>お金が残らない</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
+        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-user-tie text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: #3a3a3a; line-height: 1.7;">税理士さんはいるけど、<br>経営判断は相談しづらい</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">税理士さんはいるけど、<br>経営判断は相談しづらい</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
+        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-chart-line text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: #3a3a3a; line-height: 1.7;">採用や投資に、<br>いくら使えるかわからない</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">採用や投資に、いくら<br>使えるかわからない</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
+        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-triangle-exclamation text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: #3a3a3a; line-height: 1.7;">資金繰りがいつも不安</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">資金繰りが<br>いつも不安</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
+        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-calculator text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: #3a3a3a; line-height: 1.7;">数字を見るのが苦手</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">数字を見るのが<br>苦手</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #F4F8E8;">
+        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
             <i class="fas fa-heart text-primary"></i>
           </div>
-          <p class="text-sm md:text-base pt-2" style="color: #3a3a3a; line-height: 1.7;">経営を安心して<br>話せる相手がほしい</p>
+          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">経営を安心して話せる<br>相手がほしい</p>
         </div>
       </div>
 
       <div class="text-center scroll-animation">
-        <p class="text-base md:text-lg" style="color: #3a3a3a; line-height: 2;">
+        <p class="text-base md:text-lg" style="color: var(--color-text-soft); line-height: 2;">
           そのお悩み、ひとりで抱えなくて大丈夫です。<br>
-          ビズワクの社外CFOが、経営の<span class="text-primary font-bold">「今」</span>と<span class="text-primary font-bold">「未来」</span>を一緒に整えます。
+          ビズワクが、経営の<span class="text-primary font-bold">「今」</span>と<span class="text-primary font-bold">「未来」</span>を一緒に整えます。
         </p>
       </div>
     </div>
   </section>
 
-  <!-- (3) 社外CFOとは？ -->
-  <section class="py-20 lg:py-28" style="background-color: #fbfaf4;">
+  <!-- ===== (4) 社外CFOとは ===== -->
+  <section id="service" class="py-16 lg:py-24 bg-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-5" style="color: #1f2933; letter-spacing: 0.1em;">
-          社外CFOとは？
-        </h2>
-        <p class="text-sm md:text-base" style="color: #3a3a3a; line-height: 1.9;">
-          税務だけでなく、経営の意思決定に役立つ「未来のお金」を一緒につくる存在です。
+      <div class="grid md:grid-cols-[280px_1fr] gap-8 md:gap-12 items-start mb-10 scroll-animation">
+        <div>
+          <h2 class="section-title md:text-left">ビズワクの<br>社外CFOとは？</h2>
+          <div class="hidden md:block w-12 h-0.5 mt-4" style="background: var(--color-primary);"></div>
+        </div>
+        <p class="text-sm md:text-base" style="color: var(--color-text-soft); line-height: 2;">
+          税務だけでなく、経営の<br class="hidden lg:block">
+          意思決定に役立つ「未来のお金」を<br class="hidden lg:block">
+          一緒につくる存在です。
         </p>
       </div>
 
-      <!-- PC: 比較表 -->
       <div class="hidden md:block scroll-animation">
-        <div class="rounded-3xl overflow-hidden shadow-sm" style="border: 1px solid #e7eadc;">
+        <div class="rounded-card overflow-hidden border-soft">
           <table class="w-full bg-white text-sm md:text-base">
             <thead>
               <tr>
-                <th class="px-6 py-5 text-left font-bold" style="background-color: #fbfaf4; color: #5a5a5a; width: 22%;"></th>
-                <th class="px-6 py-5 text-left font-bold" style="background-color: #f1f1ec; color: #3a3a3a;">一般的な顧問税理士</th>
-                <th class="px-6 py-5 text-left font-bold bg-primary text-white">ビズワクの社外CFO</th>
+                <th class="px-6 py-4 text-left font-bold" style="background: var(--color-bg); color: var(--color-mute); width: 22%;"></th>
+                <th class="px-6 py-4 text-left font-bold" style="background: #f1f1ec; color: var(--color-text-soft);">一般的な顧問税理士</th>
+                <th class="px-6 py-4 text-left font-bold bg-primary text-white">ビズワクの社外CFO</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-top: 1px solid #e7eadc;">
-                <td class="px-6 py-5 font-bold" style="background-color: #fbfaf4; color: #1f2933;">見る時間軸</td>
-                <td class="px-6 py-5" style="color: #3a3a3a;">過去の数字を整理する</td>
-                <td class="px-6 py-5 font-medium" style="background-color: #F4F8E8; color: #1f2933;">未来のお金を見える化する</td>
+              <tr style="border-top: 1px solid var(--color-border);">
+                <td class="px-6 py-4 font-bold" style="background: var(--color-bg); color: var(--color-text);">見る時間軸</td>
+                <td class="px-6 py-4" style="color: var(--color-text-soft);">過去の数字を整理する</td>
+                <td class="px-6 py-4 font-medium" style="background: var(--color-bg-soft); color: var(--color-text);">未来のお金を見える化する</td>
               </tr>
-              <tr style="border-top: 1px solid #e7eadc;">
-                <td class="px-6 py-5 font-bold" style="background-color: #fbfaf4; color: #1f2933;">主な役割</td>
-                <td class="px-6 py-5" style="color: #3a3a3a;">正しく申告する</td>
-                <td class="px-6 py-5 font-medium" style="background-color: #F4F8E8; color: #1f2933;">経営判断に使える数字に変える</td>
+              <tr style="border-top: 1px solid var(--color-border);">
+                <td class="px-6 py-4 font-bold" style="background: var(--color-bg); color: var(--color-text);">主な役割</td>
+                <td class="px-6 py-4" style="color: var(--color-text-soft);">正しく申告する</td>
+                <td class="px-6 py-4 font-medium" style="background: var(--color-bg-soft); color: var(--color-text);">経営判断に使える数字に変える</td>
               </tr>
-              <tr style="border-top: 1px solid #e7eadc;">
-                <td class="px-6 py-5 font-bold" style="background-color: #fbfaf4; color: #1f2933;">サポートの中心</td>
-                <td class="px-6 py-5" style="color: #3a3a3a;">税務相談が中心</td>
-                <td class="px-6 py-5 font-medium" style="background-color: #F4F8E8; color: #1f2933;">資金繰り・調達・投資判断を一緒に考える</td>
+              <tr style="border-top: 1px solid var(--color-border);">
+                <td class="px-6 py-4 font-bold" style="background: var(--color-bg); color: var(--color-text);">サポートの中心</td>
+                <td class="px-6 py-4" style="color: var(--color-text-soft);">税務相談が中心</td>
+                <td class="px-6 py-4 font-medium" style="background: var(--color-bg-soft); color: var(--color-text);">投資・採用・資金繰りを一緒に考える</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- スマホ: カード -->
       <div class="md:hidden space-y-4 scroll-animation">
-        <div class="bg-white rounded-2xl p-5 shadow-sm" style="border: 1px solid #e7eadc;">
-          <h4 class="font-bold pb-3 mb-3 text-sm" style="color: #1f2933; border-bottom: 1px solid #e7eadc;">見る時間軸</h4>
-          <p class="text-xs mb-2" style="color: #5a5a5a;"><span class="font-bold">税理士：</span>過去の数字を整理する</p>
-          <p class="text-sm rounded-xl px-3 py-2 mt-2 font-medium" style="background-color: #F4F8E8; color: #1f2933;"><span class="text-primary font-bold">CFO：</span>未来のお金を見える化する</p>
+        <div class="card p-5">
+          <h4 class="font-bold pb-3 mb-3 text-sm" style="color: var(--color-text); border-bottom: 1px solid var(--color-border);">見る時間軸</h4>
+          <p class="text-xs mb-2" style="color: var(--color-mute);"><span class="font-bold">税理士：</span>過去の数字を整理する</p>
+          <p class="text-sm rounded-xl px-3 py-2 mt-2 font-medium bg-soft" style="color: var(--color-text);"><span class="text-primary font-bold">CFO：</span>未来のお金を見える化する</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm" style="border: 1px solid #e7eadc;">
-          <h4 class="font-bold pb-3 mb-3 text-sm" style="color: #1f2933; border-bottom: 1px solid #e7eadc;">主な役割</h4>
-          <p class="text-xs mb-2" style="color: #5a5a5a;"><span class="font-bold">税理士：</span>正しく申告する</p>
-          <p class="text-sm rounded-xl px-3 py-2 mt-2 font-medium" style="background-color: #F4F8E8; color: #1f2933;"><span class="text-primary font-bold">CFO：</span>経営判断に使える数字に変える</p>
+        <div class="card p-5">
+          <h4 class="font-bold pb-3 mb-3 text-sm" style="color: var(--color-text); border-bottom: 1px solid var(--color-border);">主な役割</h4>
+          <p class="text-xs mb-2" style="color: var(--color-mute);"><span class="font-bold">税理士：</span>正しく申告する</p>
+          <p class="text-sm rounded-xl px-3 py-2 mt-2 font-medium bg-soft" style="color: var(--color-text);"><span class="text-primary font-bold">CFO：</span>経営判断に使える数字に変える</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm" style="border: 1px solid #e7eadc;">
-          <h4 class="font-bold pb-3 mb-3 text-sm" style="color: #1f2933; border-bottom: 1px solid #e7eadc;">サポートの中心</h4>
-          <p class="text-xs mb-2" style="color: #5a5a5a;"><span class="font-bold">税理士：</span>税務相談が中心</p>
-          <p class="text-sm rounded-xl px-3 py-2 mt-2 font-medium" style="background-color: #F4F8E8; color: #1f2933;"><span class="text-primary font-bold">CFO：</span>資金繰り・調達・投資判断を一緒に考える</p>
+        <div class="card p-5">
+          <h4 class="font-bold pb-3 mb-3 text-sm" style="color: var(--color-text); border-bottom: 1px solid var(--color-border);">サポートの中心</h4>
+          <p class="text-xs mb-2" style="color: var(--color-mute);"><span class="font-bold">税理士：</span>税務相談が中心</p>
+          <p class="text-sm rounded-xl px-3 py-2 mt-2 font-medium bg-soft" style="color: var(--color-text);"><span class="text-primary font-bold">CFO：</span>投資・採用・資金繰りを一緒に考える</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- (4) ビズワクだからできること -->
-  <section class="py-20 lg:py-28 bg-white">
+  <!-- ===== (5) ビズワクだからできること ===== -->
+  <section class="py-16 lg:py-24" style="background-color: var(--color-bg);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">
-          ビズワクだからできること
-        </h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <h2 class="section-title">ビズワクだからできること</h2>
+        <div class="section-divider"></div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-5 lg:gap-6 scroll-animation">
-        <div class="rounded-3xl p-7 md:p-8 transition hover:-translate-y-1 hover:shadow-md duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold bg-primary flex-shrink-0">1</span>
-            <i class="fas fa-lightbulb text-primary text-2xl ml-auto opacity-70"></i>
+        <div class="card card-hover p-7 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-3xl md:text-4xl font-bold text-primary">1</span>
+            <i class="fas fa-binoculars text-primary text-xl opacity-60"></i>
           </div>
-          <h3 class="text-lg md:text-xl mb-3" style="color: #1f2933; font-weight: 600; line-height: 1.7;">
+          <h3 class="text-lg md:text-xl mb-3" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
             お金の不安が、<br>見通しに変わる
           </h3>
-          <p class="text-sm" style="color: #3a3a3a; line-height: 1.9;">
-            資金繰りや利益の見通しを整え、先の不安を「計画」に変えます。
+          <p class="text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
+            資金繰りや利益計画を見える化し、安心して前に進める状態にします。
           </p>
         </div>
-        <div class="rounded-3xl p-7 md:p-8 transition hover:-translate-y-1 hover:shadow-md duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold bg-primary flex-shrink-0">2</span>
-            <i class="fas fa-chart-simple text-primary text-2xl ml-auto opacity-70"></i>
+        <div class="card card-hover p-7 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-3xl md:text-4xl font-bold text-primary">2</span>
+            <i class="fas fa-chart-line text-primary text-xl opacity-60"></i>
           </div>
-          <h3 class="text-lg md:text-xl mb-3" style="color: #1f2933; font-weight: 600; line-height: 1.7;">
+          <h3 class="text-lg md:text-xl mb-3" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
             数字が、経営判断の<br>味方になる
           </h3>
-          <p class="text-sm" style="color: #3a3a3a; line-height: 1.9;">
-            数字をやさしく、わかりやすく。迷わない判断をサポートします。
+          <p class="text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
+            数字を「わかりやすく・使いやすく」整理し、迷いなく意思決定できるようにします。
           </p>
         </div>
-        <div class="rounded-3xl p-7 md:p-8 transition hover:-translate-y-1 hover:shadow-md duration-300" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold bg-primary flex-shrink-0">3</span>
-            <i class="fas fa-user-group text-primary text-2xl ml-auto opacity-70"></i>
+        <div class="card card-hover p-7 md:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-3xl md:text-4xl font-bold text-primary">3</span>
+            <i class="fas fa-people-group text-primary text-xl opacity-60"></i>
           </div>
-          <h3 class="text-lg md:text-xl mb-3" style="color: #1f2933; font-weight: 600; line-height: 1.7;">
+          <h3 class="text-lg md:text-xl mb-3" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
             ひとりで抱える経営から、<br>抜け出せる
           </h3>
-          <p class="text-sm" style="color: #3a3a3a; line-height: 1.9;">
-            経営の壁打ち相手として、安心して本音で話せます。
+          <p class="text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
+            伴走者がいることで、孤独や不安が減り、本業に集中できる環境をつくります。
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- (5) こんな相談ができます -->
-  <section class="py-20 lg:py-28" style="background-color: #fbfaf4;">
+  <!-- ===== (6) こんな相談ができます ===== -->
+  <section class="py-16 lg:py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">
-          こんな相談ができます
-        </h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <h2 class="section-title">こんな相談ができます</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 scroll-animation">
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #F4F8E8;">
-            <i class="fas fa-user-plus text-primary text-sm"></i>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 scroll-animation">
+        <div class="card card-hover p-5 flex items-start gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
+            <i class="fas fa-user-plus text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: #3a3a3a; line-height: 1.7;">この採用をしても、<br>資金繰りは大丈夫？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">この採用をしても、<br>資金繰りは大丈夫？</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #F4F8E8;">
-            <i class="fas fa-bullhorn text-primary text-sm"></i>
+        <div class="card card-hover p-5 flex items-start gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
+            <i class="fas fa-bullhorn text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: #3a3a3a; line-height: 1.7;">広告費をどこまで<br>使っていい？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">広告費をどこまで<br>使っていい？</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #F4F8E8;">
-            <i class="fas fa-circle-question text-primary text-sm"></i>
+        <div class="card card-hover p-5 flex items-start gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
+            <i class="fas fa-circle-question text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: #3a3a3a; line-height: 1.7;">利益が出ているのに、<br>お金が残らないのはなぜ？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">利益が出ているのに、<br>お金が残らないのはなぜ？</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #F4F8E8;">
-            <i class="fas fa-building-columns text-primary text-sm"></i>
+        <div class="card card-hover p-5 flex items-start gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
+            <i class="fas fa-building-columns text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: #3a3a3a; line-height: 1.7;">銀行から借りた方がいい？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">銀行から借りた方がいい？</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #F4F8E8;">
-            <i class="fas fa-flag text-primary text-sm"></i>
+        <div class="card card-hover p-5 flex items-start gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
+            <i class="fas fa-flag text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: #3a3a3a; line-height: 1.7;">新規事業を始める前に<br>数字を見たい</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">新規事業を始める前に<br>数字を見たい</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 md:p-6 flex items-start gap-4 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: #F4F8E8;">
-            <i class="fas fa-user-tie text-primary text-sm"></i>
+        <div class="card card-hover p-5 flex items-start gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-1">
+            <i class="fas fa-user-tie text-primary text-xs"></i>
           </div>
-          <p class="text-sm md:text-base pt-1.5" style="color: #3a3a3a; line-height: 1.7;">役員報酬をどう考える？</p>
+          <p class="text-sm md:text-base pt-1.5" style="color: var(--color-text-soft); line-height: 1.7;">役員報酬をどう考える？</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- (6) 具体的に、ご一緒できること -->
-  <section class="py-20 lg:py-28 bg-white">
+  <!-- ===== (7) お客様の声 ===== -->
+  <section class="py-16 lg:py-24" style="background-color: var(--color-bg);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">
-          具体的に、ご一緒できること
-        </h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <p class="section-label">VOICE</p>
+        <h2 class="section-title">お客様の声</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <div class="bg-primary rounded-organic p-6 md:p-10 lg:p-12 relative overflow-hidden scroll-animation">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-12 translate-x-12"></div>
-        <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
-
-        <div class="relative">
-          <div class="text-center mb-8 text-white">
-            <p class="inline-block bg-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-wider">CFO SERVICE</p>
-            <h3 class="text-2xl md:text-3xl mb-3" style="font-weight: 600; letter-spacing: 0.1em;">社外CFO</h3>
-            <p class="text-sm md:text-base opacity-95" style="line-height: 1.9;">
-              財務の専門性 × コーチングで、<br class="md:hidden">経営の意思決定を支えます。
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-4 md:gap-5">
-            <div class="bg-white rounded-2xl p-5 md:p-6">
-              <h4 class="font-bold text-base mb-4 pb-3" style="color: #1f2933; border-bottom: 1px solid #e7eadc;">
-                <i class="fas fa-eye text-primary mr-2"></i>財務の見える化
-              </h4>
-              <ul class="space-y-2 text-xs md:text-sm" style="color: #3a3a3a; line-height: 1.8;">
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>月次・資金繰りの見える化</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>経営数字のわかりやすい解説</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>予実管理・KPIの設計</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>財務資料の整理・改善</li>
-              </ul>
-            </div>
-            <div class="bg-white rounded-2xl p-5 md:p-6">
-              <h4 class="font-bold text-base mb-4 pb-3" style="color: #1f2933; border-bottom: 1px solid #e7eadc;">
-                <i class="fas fa-compass text-primary mr-2"></i>経営判断のサポート
-              </h4>
-              <ul class="space-y-2 text-xs md:text-sm" style="color: #3a3a3a; line-height: 1.8;">
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>投資・採用の判断サポート</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>資金繰り・調達戦略の設計</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>事業計画・予算策定の伴走</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>収益性改善のアドバイス</li>
-              </ul>
-            </div>
-            <div class="bg-white rounded-2xl p-5 md:p-6">
-              <h4 class="font-bold text-base mb-4 pb-3" style="color: #1f2933; border-bottom: 1px solid #e7eadc;">
-                <i class="fas fa-comments text-primary mr-2"></i>経営者の壁打ち・伴走
-              </h4>
-              <ul class="space-y-2 text-xs md:text-sm" style="color: #3a3a3a; line-height: 1.8;">
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>経営の壁打ち・相談対応</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>中長期の戦略設計サポート</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>意思決定の後押し</li>
-                <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-xs"></i>信頼できるパートナーとして伴走</li>
-              </ul>
-            </div>
-          </div>
-
-          <p class="text-center text-white text-xs md:text-sm mt-7 opacity-90">
-            ご支援内容は、貴社の状況に合わせてカスタマイズします。
+      <div class="grid md:grid-cols-3 gap-5 lg:gap-6 scroll-animation">
+        <div class="card card-hover p-7 md:p-8 relative" style="border: 2px solid var(--color-primary); background: linear-gradient(180deg, #FAFBF5 0%, #ffffff 100%);">
+          <span class="absolute -top-3 left-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-pill tracking-widest">NEW</span>
+          <i class="fas fa-quote-left text-primary text-xl mb-3 opacity-70"></i>
+          <h3 class="text-base md:text-lg mb-4" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
+            "こんな人、<br>こんなサポートがほしかった。"
+          </h3>
+          <p class="text-sm mb-5" style="color: var(--color-text-soft); line-height: 1.9;">
+            数字だけでなく、気持ちにも寄り添ってくれるので、安心して相談できます。
           </p>
+          <p class="text-xs pt-3" style="color: var(--color-mute); border-top: 1px solid var(--color-border);">内装デザイン会社　代表取締役</p>
+        </div>
+        <div class="card card-hover p-7 md:p-8">
+          <i class="fas fa-quote-left text-primary text-xl mb-3 opacity-70"></i>
+          <h3 class="text-base md:text-lg mb-4" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
+            数字の相談なのに、<br>気持ちまで整理されました。
+          </h3>
+          <p class="text-sm mb-5" style="color: var(--color-text-soft); line-height: 1.9;">
+            頭の中がすっきりして、次に何をすべきかが明確になりました。
+          </p>
+          <p class="text-xs pt-3" style="color: var(--color-mute); border-top: 1px solid var(--color-border);">美容サロン経営　オーナー</p>
+        </div>
+        <div class="card card-hover p-7 md:p-8">
+          <i class="fas fa-quote-left text-primary text-xl mb-3 opacity-70"></i>
+          <h3 class="text-base md:text-lg mb-4" style="color: var(--color-text); font-weight: 700; line-height: 1.6;">
+            ひとりで抱えていた不安が、<br>次の一手に変わりました。
+          </h3>
+          <p class="text-sm mb-5" style="color: var(--color-text-soft); line-height: 1.9;">
+            伴走してもらうことで、社内の雰囲気も前向きになりました。
+          </p>
+          <p class="text-xs pt-3" style="color: var(--color-mute); border-top: 1px solid var(--color-border);">製造業　代表取締役</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- (7) 料金 -->
-  <section id="pricing" class="py-20 lg:py-28" style="background-color: #fbfaf4;">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <p class="text-sm text-primary font-medium tracking-widest mb-3">PRICING</p>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">料金</h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
+  <!-- ===== (8) 代表紹介 ===== -->
+  <section id="story" class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <p class="section-label">PROFILE</p>
+        <h2 class="section-title">数字と想い、両方に寄り添う2人が伴走します</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <div class="bg-white rounded-organic p-7 md:p-10 lg:p-12 shadow-sm scroll-animation" style="border: 1px solid #e7eadc;">
-        <div class="text-center mb-8">
-          <p style="color: #3a3a3a; line-height: 2;">
-            前年度売上の<span class="text-primary font-bold text-3xl mx-1">3%</span>を
-          </p>
-          <p style="color: #3a3a3a; line-height: 2;">
-            12ヶ月で按分した金額を月額報酬としていただきます。
-          </p>
-        </div>
-
-        <div class="rounded-3xl p-7 md:p-9 text-center mb-6" style="background-color: #fbfaf4; border: 1px solid #e7eadc;">
-          <p class="text-sm font-bold mb-6" style="color: #5a5a5a; letter-spacing: 0.1em;">金額の目安</p>
-          <div class="grid grid-cols-2 gap-4 md:gap-6 max-w-md mx-auto">
-            <div class="bg-white rounded-2xl p-5" style="border: 1px solid #e7eadc;">
-              <p class="text-xs mb-2 tracking-widest" style="color: #888888;">MIN</p>
-              <p class="text-xl md:text-2xl lg:text-3xl font-bold text-primary">
-                月5万円<span class="text-xs font-normal ml-1" style="color: #5a5a5a;">〜</span>
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8 scroll-animation">
+        <article class="card card-hover p-6 md:p-7">
+          <div class="flex items-start gap-5 mb-5">
+            <div class="overflow-hidden rounded-2xl flex-shrink-0 w-24 md:w-28 aspect-square">
+              <img src="images/nao.jpg" alt="二田水尚" class="w-full h-full object-cover">
+            </div>
+            <div class="pt-1">
+              <h3 class="text-xl md:text-2xl mb-1" style="color: var(--color-text); font-weight: 600; letter-spacing: 0.2em;">二田水 尚</h3>
+              <p class="text-xs text-primary tracking-[0.2em] mb-3">Nitamizu Nao</p>
+              <p class="text-xs md:text-sm" style="color: var(--color-text-soft); line-height: 1.7;">
+                感情や本音を言葉にし、<br>経営者の判断軸を引き出す人
               </p>
             </div>
-            <div class="bg-white rounded-2xl p-5" style="border: 1px solid #e7eadc;">
-              <p class="text-xs mb-2 tracking-widest" style="color: #888888;">MAX</p>
-              <p class="text-xl md:text-2xl lg:text-3xl font-bold text-primary">月50万円</p>
+          </div>
+          <ul class="space-y-1.5 text-xs md:text-[13px] pt-4" style="color: var(--color-text-soft); border-top: 1px solid var(--color-border);">
+            <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-[10px]"></i>税理士</li>
+            <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-[10px]"></i>プロコーチ資格 CPCC</li>
+            <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-[10px]"></i>10年以上の経営者伴走経験</li>
+          </ul>
+          <details class="mt-3 text-xs" style="color: var(--color-mute);">
+            <summary class="cursor-pointer hover:text-primary">経歴を見る</summary>
+            <ul class="mt-3 space-y-1.5" style="line-height: 1.7;">
+              <li>・早稲田大学商学部卒</li>
+              <li>・税理士法人・マイナビ経理部を経て独立</li>
+              <li>・税理士登録番号146409</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card card-hover p-6 md:p-7">
+          <div class="flex items-start gap-5 mb-5">
+            <div class="overflow-hidden rounded-2xl flex-shrink-0 w-24 md:w-28 aspect-square">
+              <img src="images/mika.jpg" alt="吉永美香" class="w-full h-full object-cover">
+            </div>
+            <div class="pt-1">
+              <h3 class="text-xl md:text-2xl mb-1" style="color: var(--color-text); font-weight: 600; letter-spacing: 0.2em;">吉永 美香</h3>
+              <p class="text-xs text-primary tracking-[0.2em] mb-3">Yoshinaga Mika</p>
+              <p class="text-xs md:text-sm" style="color: var(--color-text-soft); line-height: 1.7;">
+                資金繰りや投資判断を整理し、<br>続けられる経営の見通しをつくる人
+              </p>
+            </div>
+          </div>
+          <ul class="space-y-1.5 text-xs md:text-[13px] pt-4" style="color: var(--color-text-soft); border-top: 1px solid var(--color-border);">
+            <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-[10px]"></i>税理士</li>
+            <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-[10px]"></i>財務経理・資金調達の実務経験</li>
+            <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1 text-[10px]"></i>中小企業の支援実績多数</li>
+          </ul>
+          <details class="mt-3 text-xs" style="color: var(--color-mute);">
+            <summary class="cursor-pointer hover:text-primary">経歴を見る</summary>
+            <ul class="mt-3 space-y-1.5" style="line-height: 1.7;">
+              <li>・学習院大学法学部卒</li>
+              <li>・税理士法人・クレディセゾン財務経理部を経て独立</li>
+              <li>・税理士登録番号152917</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== (9) ビズワクが大切にしていること ===== -->
+  <section class="py-16 lg:py-24" style="background-color: var(--color-bg);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <h2 class="section-title">ビズワクが大切にしていること</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 scroll-animation">
+        <div class="card p-4 md:p-5 text-center">
+          <i class="fas fa-heart text-primary text-xl mb-3"></i>
+          <p class="text-xs md:text-[13px]" style="color: var(--color-text-soft); line-height: 1.6;">足りないではなく、<br>あるを信じる</p>
+        </div>
+        <div class="card p-4 md:p-5 text-center">
+          <i class="fas fa-hand-holding-heart text-primary text-xl mb-3"></i>
+          <p class="text-xs md:text-[13px]" style="color: var(--color-text-soft); line-height: 1.6;">「想い」と「数字」<br>に寄り添う</p>
+        </div>
+        <div class="card p-4 md:p-5 text-center">
+          <i class="fas fa-people-group text-primary text-xl mb-3"></i>
+          <p class="text-xs md:text-[13px]" style="color: var(--color-text-soft); line-height: 1.6;">一緒に進む</p>
+        </div>
+        <div class="card p-4 md:p-5 text-center">
+          <i class="fas fa-seedling text-primary text-xl mb-3"></i>
+          <p class="text-xs md:text-[13px]" style="color: var(--color-text-soft); line-height: 1.6;">小さな一歩を<br>祝福する</p>
+        </div>
+        <div class="card p-4 md:p-5 text-center">
+          <i class="fas fa-user text-primary text-xl mb-3"></i>
+          <p class="text-xs md:text-[13px]" style="color: var(--color-text-soft); line-height: 1.6;">経営者の前に、<br>ひとりの人間として向き合う</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== (10) 料金 ===== -->
+  <section id="pricing" class="py-16 lg:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <p class="section-label">PRICING</p>
+        <h2 class="section-title">料金</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="card p-7 md:p-10 lg:p-12 scroll-animation">
+        <div class="text-center mb-8">
+          <p style="color: var(--color-text-soft); line-height: 2;">
+            前年度売上の<span class="text-primary font-bold text-3xl mx-1">3%</span>を
+          </p>
+          <p style="color: var(--color-text-soft); line-height: 2;">
+            12ヶ月で按分した金額を<br class="md:hidden">月額報酬としていただきます。
+          </p>
+        </div>
+
+        <div class="rounded-card p-6 md:p-8 text-center mb-6 bg-cream border-soft">
+          <p class="text-xs md:text-sm font-bold mb-5 tracking-widest" style="color: var(--color-mute);">金額の目安</p>
+          <div class="grid grid-cols-2 gap-3 md:gap-5 max-w-md mx-auto">
+            <div class="bg-white rounded-2xl p-4 md:p-5 border-soft">
+              <p class="text-[10px] md:text-xs mb-2 tracking-widest" style="color: var(--color-mute);">MIN</p>
+              <p class="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">
+                月5万円<span class="text-xs font-normal ml-0.5" style="color: var(--color-mute);">〜</span>
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl p-4 md:p-5 border-soft">
+              <p class="text-[10px] md:text-xs mb-2 tracking-widest" style="color: var(--color-mute);">MAX</p>
+              <p class="text-xl md:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">月50万円</p>
             </div>
           </div>
         </div>
 
-        <p class="text-xs md:text-sm text-center" style="color: #5a5a5a; line-height: 1.9;">
-          ご支援範囲や会社の状況に応じて個別にご提案します。まずは無料相談でご相談ください。<br>
+        <p class="text-xs md:text-sm text-center" style="color: var(--color-text-soft); line-height: 1.9;">
+          ご支援範囲や会社の状況に応じて個別にご提案します。<br>
           <span class="text-primary font-bold">最短1カ月のお試し導入</span>も可能です。
         </p>
       </div>
     </div>
   </section>
 
-  <!-- (8) お客様の声 -->
-  <section class="py-20 lg:py-28 bg-white">
+  <!-- ===== (11) ご相談の流れ ===== -->
+  <section class="py-16 lg:py-24" style="background-color: var(--color-bg);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <p class="text-sm text-primary font-medium tracking-widest mb-3">VOICE</p>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">お客様の声</h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <p class="section-label">FLOW</p>
+        <h2 class="section-title">ご相談の流れ</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5 lg:gap-6 scroll-animation">
-        <div class="bg-white rounded-3xl p-7 md:p-8 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <i class="fas fa-quote-left text-primary text-2xl mb-4 opacity-60"></i>
-          <h3 class="text-base md:text-lg mb-4" style="color: #1f2933; font-weight: 600; line-height: 1.7;">
-            こんな人、<br>こんなサポートがほしかった。
-          </h3>
-          <p class="text-sm mb-5" style="color: #3a3a3a; line-height: 1.9;">
-            数字のことだけでなく、経営の悩みまで一緒に考えてくれて心強いです。
-          </p>
-          <p class="text-xs pt-4" style="color: #5a5a5a; border-top: 1px solid #e7eadc;">内装デザイン会社　代表取締役</p>
-        </div>
-        <div class="bg-white rounded-3xl p-7 md:p-8 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <i class="fas fa-quote-left text-primary text-2xl mb-4 opacity-60"></i>
-          <h3 class="text-base md:text-lg mb-4" style="color: #1f2933; font-weight: 600; line-height: 1.7;">
-            数字の相談なのに、<br>気持ちまで整理されました。
-          </h3>
-          <p class="text-sm mb-5" style="color: #3a3a3a; line-height: 1.9;">
-            モヤモヤしていた不安が言語化され、次に何をすべきかが明確になりました。
-          </p>
-          <p class="text-xs pt-4" style="color: #5a5a5a; border-top: 1px solid #e7eadc;">研修会社　代表取締役</p>
-        </div>
-        <div class="bg-white rounded-3xl p-7 md:p-8 shadow-sm hover:shadow-md transition" style="border: 1px solid #e7eadc;">
-          <i class="fas fa-quote-left text-primary text-2xl mb-4 opacity-60"></i>
-          <h3 class="text-base md:text-lg mb-4" style="color: #1f2933; font-weight: 600; line-height: 1.7;">
-            ひとりで抱えていた不安が、<br>次の一手に変わりました。
-          </h3>
-          <p class="text-sm mb-5" style="color: #3a3a3a; line-height: 1.9;">
-            伴走してもらうことで、スピード感を持って経営に集中できています。
-          </p>
-          <p class="text-xs pt-4" style="color: #5a5a5a; border-top: 1px solid #e7eadc;">フォトスタジオ経営　代表取締役</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- (9) ご相談の流れ -->
-  <section class="py-20 lg:py-28" style="background-color: #fbfaf4;">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <p class="text-sm text-primary font-medium tracking-widest mb-3">FLOW</p>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">ご相談の流れ</h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-5 lg:gap-6 scroll-animation">
-        <div class="bg-white rounded-3xl p-7 md:p-8 text-center shadow-sm relative" style="border: 1px solid #e7eadc;">
-          <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5 bg-primary text-white font-bold">1</div>
-          <i class="fas fa-comments text-primary text-2xl mb-3 opacity-70"></i>
-          <h3 class="text-lg mb-3" style="color: #1f2933; font-weight: 600;">無料相談</h3>
-          <p class="text-sm" style="color: #3a3a3a; line-height: 1.9;">
-            まずは現状のお悩みやご状況をお聞かせください。オンラインで60分程度です。
+      <div class="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-3 items-stretch scroll-animation">
+        <div class="card p-6 md:p-7 text-center">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary text-white font-bold">1</div>
+          <i class="fas fa-comments text-primary text-xl mb-2 opacity-70"></i>
+          <h3 class="text-base md:text-lg mb-2" style="color: var(--color-text); font-weight: 700;">無料相談</h3>
+          <p class="text-xs md:text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
+            ヒアリングを通じて、<br>お悩みや現状をお聞きします。<br>
+            <span class="text-primary font-bold text-xs">（約60分・無料）</span>
           </p>
         </div>
-        <div class="bg-white rounded-3xl p-7 md:p-8 text-center shadow-sm" style="border: 1px solid #e7eadc;">
-          <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5 bg-primary text-white font-bold">2</div>
-          <i class="fas fa-clipboard-list text-primary text-2xl mb-3 opacity-70"></i>
-          <h3 class="text-lg mb-3" style="color: #1f2933; font-weight: 600;">ご提案</h3>
-          <p class="text-sm" style="color: #3a3a3a; line-height: 1.9;">
-            お悩みに合わせたサポート内容と進め方・料金の目安をご提案します。
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="card p-6 md:p-7 text-center">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary text-white font-bold">2</div>
+          <i class="fas fa-clipboard-list text-primary text-xl mb-2 opacity-70"></i>
+          <h3 class="text-base md:text-lg mb-2" style="color: var(--color-text); font-weight: 700;">ご提案</h3>
+          <p class="text-xs md:text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
+            課題整理と改善の方向性を<br>ご提案します。<br>お見積りもご提示します。
           </p>
         </div>
-        <div class="bg-white rounded-3xl p-7 md:p-8 text-center shadow-sm" style="border: 1px solid #e7eadc;">
-          <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5 bg-primary text-white font-bold">3</div>
-          <i class="fas fa-handshake text-primary text-2xl mb-3 opacity-70"></i>
-          <h3 class="text-lg mb-3" style="color: #1f2933; font-weight: 600;">伴走スタート</h3>
-          <p class="text-sm" style="color: #3a3a3a; line-height: 1.9;">
-            ご納得いただけたら、伴走を開始。定期ミーティングで一緒に前に進めます。
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="card p-6 md:p-7 text-center">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary text-white font-bold">3</div>
+          <i class="fas fa-handshake text-primary text-xl mb-2 opacity-70"></i>
+          <h3 class="text-base md:text-lg mb-2" style="color: var(--color-text); font-weight: 700;">伴走スタート</h3>
+          <p class="text-xs md:text-sm" style="color: var(--color-text-soft); line-height: 1.9;">
+            ご納得いただけたら、<br>伴走支援を開始します。
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- (10) FAQ -->
-  <section id="faq" class="py-20 lg:py-28 bg-white">
+  <!-- ===== (12) FAQ ===== -->
+  <section id="faq" class="py-16 lg:py-24 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 lg:mb-14 scroll-animation">
-        <p class="text-sm text-primary font-medium tracking-widest mb-3">FAQ</p>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold" style="color: #1f2933; letter-spacing: 0.1em;">よくいただくご質問</h2>
-        <div class="w-12 h-0.5 bg-primary mx-auto mt-5"></div>
+      <div class="text-center mb-10 lg:mb-12 scroll-animation">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくいただくご質問</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <div class="space-y-10 scroll-animation">
-
-        <!-- カテゴリ1: サービスについて -->
+      <div class="space-y-8 scroll-animation">
         <div>
           <p class="faq-group-label">サービスについて</p>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              社外CFOとは何をしてくれるのですか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">社外CFOとは何をしてくれるのですか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              税理士が「過去の数字を正しく記録する」専門家なのに対し、社外CFOは「未来の数字をつくる」パートナーです。資金繰り予測・投資判断・事業計画の策定から、経営者の意思決定の壁打ちまで、経営の隣に並走します。<br><br>
-              契約形態は業務委任契約となります。常駐CFOを置く場合の年収は1,500万円程度ですが、社外CFOはその専門性を、より手が届きやすい形でご提供します。
+              「未来のお金」を一緒につくるパートナーです。<br><br>
+              税理士が「過去の数字を正しく記録する」専門家なのに対し、社外CFOは資金繰り予測・投資判断・事業計画の策定から、経営者の意思決定の壁打ちまで、経営の隣に並走します。契約形態は業務委任契約となります。
             </div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              コンサルタントとは違うのですか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">顧問税理士がいても依頼できますか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              「誰が答えを持っているか」が大きく異なります。コンサルタントは自分たちが答えを持ち提示しますが、ビズワクはコーチングの手法を使い、経営者の中にある想いや判断軸を一緒に引き出します。<br><br>
-              財務に「唯一の正解」はなく、100社あれば100通りの答えがあると考えています。
+              はい、問題ありません。<br><br>
+              既存の顧問税理士との役割を整理した上でサポートに入ります。税務申告はそのままお任せいただき、ビズワクは経営戦略・財務判断の領域を担当するケースがほとんどです。
             </div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              なぜコーチングと財務の両方が含まれるのですか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">どんな業種・規模の会社が対象ですか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              経営の悩みは「数字の問題」と「マインドの問題」が絡み合っていることがほとんどです。財務だけ整えても、社長自身のビジョンや判断軸が曖昧なままでは前に進めません。ビズワクはその両方に対応できる、国内でも希少なチームです。
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              顧問税理士がいても依頼できますか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" hidden>
-              はい、問題ありません。既存の顧問税理士との役割を整理した上でサポートに入ります。税務申告はそのままお任せいただき、ビズワクは経営戦略・財務判断の領域を担当するケースがほとんどです。
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              どんな業種・規模の会社が対象ですか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" hidden>
-              売上1〜5億円のオーナー経営者を中心にご支援しています。業種は問いませんが、「社長一人に意思決定が集中している」会社に特に向いています。ビズワクと一緒に成長するスタンスで、年商2,000万円程のお客さまも在籍しています。
+              売上1〜5億円のオーナー経営者を中心にご支援しています。<br><br>
+              業種は問いませんが、「社長一人に意思決定が集中している」会社に特に向いています。年商2,000万円程の創業期のお客さまも在籍しています。
             </div>
           </div>
         </div>
 
-        <!-- カテゴリ2: 料金・契約について -->
         <div>
           <p class="faq-group-label">料金・契約について</p>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              料金の目安を教えてください。
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">料金の目安を教えてください。<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              前年度売上の3%を12ヶ月で按分した金額を月額報酬の基準としています。月額5万円〜50万円が目安で、売上がどれだけ伸びても月額50万円を超えることはありません。ビズワクの関与で業績が上がれば報酬も上がる、ともに成長するための料金体系です。<br><br>
-              詳細はご状況をお聞きした上でご提示します。
+              月額5万円〜50万円が目安です。<br><br>
+              前年度売上の3%を12ヶ月で按分した金額を月額報酬の基準としています。売上がどれだけ伸びても月額50万円を超えることはありません。詳細はご状況をお聞きした上でご提示します。
             </div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              最初から月額契約しなければなりませんか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">最初から月額契約しなければなりませんか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              いいえ。まずは導入プラン（30万円・税抜、初回のみ）からご利用いただけます。「関係性づくり → 個人ビジョン → 会社ビジョン → 事業計画 → アクションプラン」の5ステップで、最短1ヶ月で経営の土台をつくる独自プログラムです。その後、継続サポートに移行するかどうかをご判断いただけます。
+              いいえ、まずは導入プランからご利用いただけます。<br><br>
+              30万円・税抜（初回のみ）の導入プランで、最短1ヶ月で経営の土台をつくる独自プログラムをご用意しています。その後、継続サポートに移行するかどうかをご判断いただけます。
             </div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              最低契約期間はありますか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">最低契約期間はありますか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              継続サポートは最低1年間をお願いしています。財務の効果は即効性があるものばかりではなく、会社とともにコミットし成果を出すまでに時間がかかるためです。
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              途中で解約はできますか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" hidden>
-              はい、可能です。2ヶ月前のご連絡をお願いしています。事業フェーズの変化や社内体制の整備により「卒業」されるケースもあり、それもひとつのゴールと考えています。
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              創業期や売上1億円未満でも相談できますか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" hidden>
-              もちろんです。まずは売上1億円を目指して一緒に進みましょう。早い段階で判断軸を共につくっていくことが、成長のスピードアップにつながります。創業期向けのお得なプランや、税理士顧問とのセット割引もご用意しています。
+              継続サポートは最低1年間をお願いしています。<br><br>
+              財務の効果は即効性があるものばかりではなく、会社とともにコミットし成果を出すまでに時間がかかるためです。
             </div>
           </div>
         </div>
 
-        <!-- カテゴリ3: 進め方・実務について -->
         <div>
           <p class="faq-group-label">進め方・実務について</p>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              無料相談では何を話せばいいですか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">無料相談では何を話せばいいですか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              準備は不要です。「今の会社の状況」「なんとなく感じている不安や課題」をそのままお話しください。社外CFOが合うかどうかも率直にお伝えします。押し売りは一切ありません。
+              準備は不要です。<br><br>
+              「今の会社の状況」「なんとなく感じている不安や課題」をそのままお話しください。社外CFOが合うかどうかも率直にお伝えします。押し売りは一切ありません。
             </div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              オンラインのみですか？対面での対応は可能ですか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">オンラインのみですか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              基本はGoogle Meetでのオンライン対応です。継続ご支援の場合は、年1回は対面でお話しすることを大切にしています。エリアや状況によっては追加の対面対応もご相談可能です。
+              基本はGoogle Meetでのオンライン対応です。<br><br>
+              継続ご支援の場合は、年1回は対面でお話しすることを大切にしています。エリアや状況によっては追加の対面対応もご相談可能です。
             </div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              会計ソフトへの入力や経理実務もお願いできますか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
+            <button class="faq-q" aria-expanded="false">会計ソフトへの入力や経理実務もお願いできますか？<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" hidden>
-              資金繰り表の作成・会計ソフト入力・振込などの実務作業は、お客さまの社内スタッフの方にお願いしています。ビズワクは経営判断・財務戦略・数字の見える化に集中することで、より高い価値をご提供できると考えています。組織体制の整備や効率化・採用についてはアドバイスが可能です。
+              実務作業は、お客さまの社内スタッフの方にお願いしています。<br><br>
+              ビズワクは経営判断・財務戦略・数字の見える化に集中することで、より高い価値をご提供できると考えています。組織体制の整備や効率化・採用についてはアドバイスが可能です。
             </div>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
-              担当はどう決まりますか？
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" hidden>
-              基本的にはなお・みか2名がチームとして関わります。財務・税務の専門性とコーチングの視点を掛け合わせてサポートするため、二人の目線が入ることがビズワクの強みです。プランや状況によって関与の度合いは異なりますので、詳細は無料相談でご確認ください。
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- (11) 最終CTA -->
-  <section class="py-20 lg:py-28" style="background-color: #fbfaf4;">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-organic p-8 md:p-12 lg:p-16 text-center relative overflow-hidden scroll-animation" style="background: linear-gradient(135deg, #F4F8E8 0%, #FAFBF5 100%); border: 1px solid #e7eadc;">
-        <div class="absolute top-4 left-4 text-primary opacity-20 text-5xl pointer-events-none"><i class="fas fa-seedling"></i></div>
-        <div class="absolute bottom-4 right-4 text-primary opacity-20 text-5xl pointer-events-none"><i class="fas fa-leaf"></i></div>
-        <div class="relative">
-          <h2 class="text-2xl md:text-3xl lg:text-4xl mb-6" style="color: #1f2933; font-weight: 600; line-height: 1.7; letter-spacing: 0.05em;">
-            ひとりで抱えているお金の不安を、<br>
-            一度<span class="text-primary">言葉</span>にしてみませんか？
-          </h2>
-          <p class="mb-8 text-base md:text-lg" style="color: #3a3a3a; line-height: 2;">
-            どんな小さなことでも大丈夫です。<br>
-            まずはお気軽にご相談ください。
-          </p>
-          <a href="contact.html" class="btn-primary text-white inline-flex items-center px-10 py-4 rounded-full font-bold text-base">
-            <i class="fas fa-comments mr-2"></i>
-            無料相談を予約する
-            <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-          <p class="mt-4 text-xs" style="color: #888888;">契約前提でなくても大丈夫です</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== COMPANY SECTION（会社概要） ===== -->
-  <section id="company" class="py-20 lg:py-32 bg-light">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 scroll-animation">
-        <p class="text-sm text-primary font-medium tracking-widest mb-3">COMPANY</p>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
-          会社概要
-        </h2>
-        <div class="leaf-accent">. . . .</div>
+  <!-- ===== (13) 会社概要 ===== -->
+  <section id="company" class="py-14 lg:py-20" style="background-color: var(--color-bg);">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8 scroll-animation">
+        <p class="section-label">COMPANY</p>
+        <h2 class="text-xl md:text-2xl font-bold" style="color: var(--color-text); letter-spacing: 0.1em;">会社概要</h2>
       </div>
-
-      <div class="bg-white rounded-organic p-8 md:p-12 lg:p-16 scroll-animation">
-        <dl class="divide-y divide-gray-100">
-          <div class="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-5">
-            <dt class="text-sm font-bold text-gray-900 tracking-wider">法人名</dt>
-            <dd class="text-gray-700">株式会社ビズワク</dd>
+      <div class="card p-6 md:p-8 scroll-animation">
+        <dl class="text-sm" style="color: var(--color-text-soft);">
+          <div class="grid md:grid-cols-[140px_1fr] gap-1 md:gap-6 py-3" style="border-bottom: 1px solid var(--color-border);">
+            <dt class="font-bold" style="color: var(--color-text);">会社名</dt>
+            <dd>ビズワク（Bizwaku）</dd>
           </div>
-
-          <div class="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-5">
-            <dt class="text-sm font-bold text-gray-900 tracking-wider">代表取締役</dt>
-            <dd class="text-gray-700">二田水 尚・吉永 美香</dd>
+          <div class="grid md:grid-cols-[140px_1fr] gap-1 md:gap-6 py-3" style="border-bottom: 1px solid var(--color-border);">
+            <dt class="font-bold" style="color: var(--color-text);">代表</dt>
+            <dd>二田水 尚 ／ 吉永 美香</dd>
           </div>
-
-          <div class="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-5">
-            <dt class="text-sm font-bold text-gray-900 tracking-wider">所在地</dt>
-            <dd class="text-gray-700" style="line-height: 1.8;">
-              〒104-0061<br>
-              東京都中央区銀座1丁目12番4号 N&amp;E BLD.6F
-            </dd>
+          <div class="grid md:grid-cols-[140px_1fr] gap-1 md:gap-6 py-3" style="border-bottom: 1px solid var(--color-border);">
+            <dt class="font-bold" style="color: var(--color-text);">所在地</dt>
+            <dd>〒104-0061<br>東京都中央区銀座1丁目12番4号 N&amp;E BLD.6F</dd>
           </div>
-
-          <div class="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-5">
-            <dt class="text-sm font-bold text-gray-900 tracking-wider">設立</dt>
-            <dd class="text-gray-700">2025年6月2日</dd>
+          <div class="grid md:grid-cols-[140px_1fr] gap-1 md:gap-6 py-3" style="border-bottom: 1px solid var(--color-border);">
+            <dt class="font-bold" style="color: var(--color-text);">事業内容</dt>
+            <dd>社外CFO ／ 財務コンサルティング ／ コーチング</dd>
           </div>
-
-          <div class="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-5">
-            <dt class="text-sm font-bold text-gray-900 tracking-wider">事業内容</dt>
-            <dd class="text-gray-700">
-              <ul class="space-y-1.5" style="line-height: 1.8;">
-                <li>・社外CFOサービス</li>
-                <li>・会計・財務・税務の仕組み化支援</li>
-                <li>・エグゼクティブコーチング</li>
-                <li>・研修講師</li>
-              </ul>
-            </dd>
-          </div>
-
-          <div class="grid md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-5">
-            <dt class="text-sm font-bold text-gray-900 tracking-wider">連絡先</dt>
-            <dd class="text-gray-700">
-              <a href="mailto:info@bizwaku.co.jp" class="text-primary hover:underline">info@bizwaku.co.jp</a>
-            </dd>
+          <div class="grid md:grid-cols-[140px_1fr] gap-1 md:gap-6 py-3">
+            <dt class="font-bold" style="color: var(--color-text);">対応エリア</dt>
+            <dd>全国（オンライン対応）</dd>
           </div>
         </dl>
       </div>
     </div>
   </section>
 
-  <!-- ===== FINAL CTA SECTION ===== -->
-  <section class="py-20 lg:py-32 bg-white relative overflow-hidden">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-primary rounded-organic p-10 md:p-16 text-center text-white relative overflow-hidden scroll-animation">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-12 translate-x-12"></div>
-        <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
-
+  <!-- ===== (14) 最終CTA ===== -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-card p-8 md:p-12 lg:p-14 text-center relative overflow-hidden scroll-animation" style="background: linear-gradient(135deg, #F4F8E8 0%, #FAFBF5 100%); border: 1px solid var(--color-border);">
+        <div class="absolute top-4 left-4 text-primary opacity-15 text-5xl pointer-events-none"><i class="fas fa-seedling"></i></div>
+        <div class="absolute bottom-4 right-4 text-primary opacity-15 text-5xl pointer-events-none"><i class="fas fa-leaf"></i></div>
         <div class="relative">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6" style="line-height: 1.6;">
-            まずは1時間、<br class="md:hidden">お話ししませんか？
+          <h2 class="text-xl md:text-2xl lg:text-3xl mb-5" style="color: var(--color-text); font-weight: 700; line-height: 1.7; letter-spacing: 0.05em;">
+            ひとりで抱えているお金の不安を、<br>
+            一度<span class="text-primary">言葉</span>にしてみませんか？
           </h2>
-          <p class="text-base md:text-lg mb-10 opacity-95" style="line-height: 1.9;">
-            ZoomまたはGoogle Meetで、御社の状況をお聞かせください。<br>
-            社外CFOが合うかどうか、率直にお伝えします。
+          <p class="mb-7 text-sm md:text-base" style="color: var(--color-text-soft); line-height: 2;">
+            どんな小さなことでも大丈夫です。<br>
+            まずはお気軽にご相談ください。
           </p>
-          <a href="contact.html" class="inline-flex items-center bg-white text-primary px-10 py-4 rounded-full font-bold text-base hover:shadow-2xl transition transform hover:-translate-y-1">
-            <i class="fas fa-comments mr-2"></i>
-            まず1時間、無料で話してみる
-            <i class="fas fa-arrow-right ml-2"></i>
+          <a href="contact.html" class="btn-primary inline-flex items-center px-8 md:px-10 py-4 rounded-pill font-bold text-sm md:text-base">
+            <i class="fas fa-comments mr-2"></i>まず1時間、無料で話してみる
+            <i class="fas fa-arrow-right ml-3"></i>
           </a>
+          <p class="mt-3 text-xs" style="color: var(--color-mute);">契約前提でなくても大丈夫です</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+  <footer class="bg-gray-900 text-white py-14 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
         <div>
-          <img src="images/logo.png" alt="ビズワク" class="h-10 mb-6 brightness-0 invert opacity-90">
-          <p class="text-gray-400 text-sm mb-2">株式会社ビズワク</p>
-          <p class="text-gray-400 text-sm">代表：二田水尚、吉永美香</p>
+          <img src="images/logo.png" alt="ビズワク" class="h-9 mb-5 brightness-0 invert opacity-90">
+          <p class="text-gray-400 text-sm mb-1">ビズワク（Bizwaku）</p>
+          <p class="text-gray-400 text-xs">代表：二田水 尚 ／ 吉永 美香</p>
         </div>
-
         <div>
           <h3 class="font-bold text-white mb-4 text-sm tracking-wider">LINKS</h3>
-          <ul class="text-gray-400 text-sm space-y-2.5">
+          <ul class="text-gray-400 text-sm space-y-2">
             <li><a href="privacy.html" class="hover:text-primary transition">プライバシーポリシー</a></li>
             <li><a href="tokushoho.html" class="hover:text-primary transition">特定商取引法に基づく表記</a></li>
             <li><a href="contact.html" class="hover:text-primary transition">お問い合わせ</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="font-bold text-white mb-4 text-sm tracking-wider">SNS</h3>
-          <ul class="text-gray-400 text-sm space-y-2.5">
+          <ul class="text-gray-400 text-sm space-y-2">
             <li>
-              <a href="https://note.com/bizwaku" target="_blank" class="inline-flex items-center hover:text-primary transition">
+              <a href="https://note.com/bizwaku" target="_blank" rel="noopener" class="inline-flex items-center hover:text-primary transition">
                 <i class="fas fa-pen-nib mr-2"></i>note
               </a>
             </li>
           </ul>
         </div>
       </div>
-
-      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-xs">
+      <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-xs">
         <p>&copy; 2025 Bizwaku Inc. All rights reserved.</p>
       </div>
     </div>
@@ -1353,22 +965,22 @@
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const icon = mobileMenuBtn.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
-    });
-
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
         const icon = mobileMenuBtn.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-xmark');
       });
-    });
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          const icon = mobileMenuBtn.querySelector('i');
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-xmark');
+        });
+      });
+    }
 
     // Scroll animation
     const observer = new IntersectionObserver((entries) => {
@@ -1378,20 +990,15 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -80px 0px'
-    });
-
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.scroll-animation').forEach(el => observer.observe(el));
 
-    // FAQ アコーディオン
+    // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(function (btn) {
       btn.addEventListener('click', function () {
         const item = btn.closest('.faq-item');
         const answer = item.querySelector('.faq-a');
         const isOpen = item.classList.contains('is-open');
-
         if (isOpen) {
           item.classList.remove('is-open');
           btn.setAttribute('aria-expanded', 'false');
