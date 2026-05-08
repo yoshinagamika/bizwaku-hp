@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#9BB52D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- 芽: 種・土から伸びる芽 -->
+  <path d="M14 50 Q32 47 50 50"/>
+  <path d="M32 50 Q31 38 32 27"/>
+  <path d="M32 38 Q22 36 20 28 Q28 28 32 38"/>
+  <path d="M32 32 Q42 30 44 22 Q36 22 32 32"/>
+</svg>

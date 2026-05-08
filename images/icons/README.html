@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ビズワク ブランドアイコン</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'Noto Sans JP', sans-serif; background: #fbfaf4; }
+  .icon-card {
+    background: #fff;
+    border: 1px solid #e7eadc;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    color: #9BB52D;
+  }
+  .icon-card svg { width: 64px; height: 64px; margin: 0 auto 12px; display: block; }
+  .icon-name { font-size: 13px; font-weight: 700; color: #1f2933; margin-top: 4px; }
+  .icon-desc { font-size: 11px; color: #888; line-height: 1.6; margin-top: 4px; }
+  /* Inline SVGs (for color via currentColor) */
+</style>
+</head>
+<body class="p-8">
+<div class="max-w-5xl mx-auto">
+  <h1 class="text-2xl font-bold mb-2" style="color: #1f2933;">ビズワク ブランドアイコン</h1>
+  <p class="text-sm mb-8" style="color: #5a5a5a;">
+    線画／<code>currentColor</code>対応／<code>stroke-linecap: round</code>。
+    HTMLで <code>&lt;img src="images/icons/sprout.svg"&gt;</code> として使うか、
+    インラインSVGとして埋め込んで <code>color</code> CSSで色変更できます。
+  </p>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div class="icon-card"><img src="sprout.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">芽</div><div class="icon-desc">成長・可能性<br>小さな一歩</div></div>
+    <div class="icon-card"><img src="dialogue.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">対話・伴走</div><div class="icon-desc">相談・壁打ち<br>安心して話せる関係</div></div>
+    <div class="icon-card"><img src="chat.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">会話</div><div class="icon-desc">チャット<br>言語化</div></div>
+    <div class="icon-card"><img src="path.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">見通し・道のり</div><div class="icon-desc">経営の先を<br>見通す</div></div>
+    <div class="icon-card"><img src="light.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">余白・ひかり</div><div class="icon-desc">安心<br>整理された状態</div></div>
+    <div class="icon-card"><img src="walking-together.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">共に歩む</div><div class="icon-desc">伴走・チーム<br>ひとりで抱えない</div></div>
+    <div class="icon-card"><img src="horizon.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">未来の見通し</div><div class="icon-desc">地平線・朝日<br>芽吹き</div></div>
+    <div class="icon-card"><img src="support.svg" class="w-16 h-16 mx-auto mb-3"><div class="icon-name">小さな一歩を支える</div><div class="icon-desc">手のひらが<br>挑戦を支える</div></div>
+  </div>
+
+  <div class="mt-12 bg-white rounded-2xl p-6 border" style="border-color: #e7eadc;">
+    <h2 class="text-lg font-bold mb-4" style="color: #1f2933;">使い方</h2>
+    <p class="text-sm mb-3" style="color: #3a3a3a;">1. 静的に使う場合：</p>
+    <pre class="bg-gray-50 p-3 rounded text-xs overflow-auto mb-4">&lt;img src="images/icons/sprout.svg" class="w-8 h-8" alt=""&gt;</pre>
+    <p class="text-sm mb-3" style="color: #3a3a3a;">2. 色を変えたい場合（インライン埋め込み）：</p>
+    <pre class="bg-gray-50 p-3 rounded text-xs overflow-auto">&lt;span class="text-primary"&gt;
+  &lt;svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;!-- pathをコピー --&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;</pre>
+  </div>
+</div>
+</body>
+</html>

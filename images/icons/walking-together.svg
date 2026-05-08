@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#9BB52D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- 共に歩む: 並んで歩く2人 -->
+  <circle cx="22" cy="20" r="4.5"/>
+  <circle cx="42" cy="20" r="4.5"/>
+  <path d="M16 48 Q16 36 22 34 Q28 36 28 48"/>
+  <path d="M36 48 Q36 36 42 34 Q48 36 48 48"/>
+  <path d="M8 56 Q32 52 56 56"/>
+</svg>

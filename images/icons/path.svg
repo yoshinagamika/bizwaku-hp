@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#9BB52D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- 見通し・道のり: ゆるやかに続く道 -->
+  <path d="M8 52 Q22 46 30 38 Q38 30 50 24"/>
+  <circle cx="52" cy="20" r="2.5"/>
+  <path d="M10 56 H14"/>
+  <path d="M22 50 H26"/>
+  <path d="M34 40 H38"/>
+</svg>

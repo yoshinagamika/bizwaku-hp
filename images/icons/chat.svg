@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#9BB52D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- 会話: 重なる吹き出し -->
+  <path d="M14 16 Q14 13 17 13 H38 Q41 13 41 16 V30 Q41 33 38 33 H24 L18 39 V33 Q14 33 14 30 Z"/>
+  <path d="M26 26 Q26 23 29 23 H50 Q53 23 53 26 V40 Q53 43 50 43 H38 L32 49 V43 Q26 43 26 40 Z"/>
+</svg>

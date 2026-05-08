@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#9BB52D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- 未来の見通し: 地平線と朝日と芽 -->
+  <path d="M6 46 Q32 44 58 46"/>
+  <path d="M22 46 Q22 32 32 32 Q42 32 42 46"/>
+  <path d="M32 26 Q32 28 32 30"/>
+  <path d="M16 36 Q17 37 18 38"/>
+  <path d="M48 36 Q47 37 46 38"/>
+  <path d="M12 46 V40"/>
+  <path d="M12 42 Q9 41 9 38 Q12 39 12 42"/>
+  <path d="M12 41 Q15 40 15 37 Q12 38 12 41"/>
+</svg>

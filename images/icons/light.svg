@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#9BB52D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- 余白・ひかり: やわらかな光 -->
+  <circle cx="32" cy="32" r="7"/>
+  <path d="M32 14 Q32 16 32 18"/>
+  <path d="M32 46 Q32 48 32 50"/>
+  <path d="M14 32 Q16 32 18 32"/>
+  <path d="M46 32 Q48 32 50 32"/>
+  <path d="M19 19 Q21 21 22 22"/>
+  <path d="M42 42 Q43 43 45 45"/>
+  <path d="M19 45 Q21 43 22 42"/>
+  <path d="M42 22 Q43 21 45 19"/>
+</svg>
