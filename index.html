@@ -206,6 +206,49 @@
       .step-arrow { transform: rotate(90deg); padding: 8px 0; }
     }
 
+    /* === 吹き出し（お悩みセクション） === */
+    .concern-bubble {
+      position: relative;
+      display: inline-block;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--color-text-soft);
+      box-shadow: 0 4px 16px rgba(176, 204, 59, 0.10);
+    }
+    @media (min-width: 768px) {
+      .concern-bubble { font-size: 14px; padding: 16px 28px; }
+    }
+    .concern-bubble::before,
+    .concern-bubble::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+    .concern-bubble.tail-bl::before { bottom: -9px; left: 28px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid var(--color-border); }
+    .concern-bubble.tail-bl::after  { bottom: -7px; left: 29px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #fff; }
+    .concern-bubble.tail-br::before { bottom: -9px; right: 28px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid var(--color-border); }
+    .concern-bubble.tail-br::after  { bottom: -7px; right: 29px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #fff; }
+    .concern-bubble.tail-tl::before { top: -9px; left: 28px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 9px solid var(--color-border); }
+    .concern-bubble.tail-tl::after  { top: -7px; left: 29px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 7px solid #fff; }
+    .concern-bubble.tail-tr::before { top: -9px; right: 28px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 9px solid var(--color-border); }
+    .concern-bubble.tail-tr::after  { top: -7px; right: 29px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 7px solid #fff; }
+
+    @keyframes float-soft {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-6px); }
+    }
+    .float-1 { animation: float-soft 5s   ease-in-out infinite; }
+    .float-2 { animation: float-soft 6s   ease-in-out infinite 0.4s; }
+    .float-3 { animation: float-soft 7s   ease-in-out infinite 0.9s; }
+    .float-4 { animation: float-soft 5.5s ease-in-out infinite 1.4s; }
+    .float-5 { animation: float-soft 6.5s ease-in-out infinite 0.2s; }
+    .float-6 { animation: float-soft 5.8s ease-in-out infinite 0.7s; }
+
     /* Header CTA badge for mobile */
     .header-cta-badge {
       font-size: 12px;
@@ -315,42 +358,18 @@
         <div class="section-divider"></div>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10 scroll-animation">
-        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
-            <i class="fas fa-yen-sign text-primary"></i>
-          </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">売上はあるのに、お金が残らない</p>
+      <div class="max-w-4xl mx-auto mb-10 scroll-animation">
+        <!-- 上段 -->
+        <div class="flex flex-wrap justify-center items-end gap-x-4 gap-y-5 mb-3 md:mb-5">
+          <span class="concern-bubble tail-br float-1">売上はあるのに、お金が残らない</span>
+          <span class="concern-bubble tail-bl float-2 md:mt-6">税理士さんはいるけど、経営判断は相談しづらい</span>
+          <span class="concern-bubble tail-br float-3">採用や投資に、いくら使えるかわからない</span>
+          <span class="concern-bubble tail-bl float-4 md:mt-4">資金繰りがいつも不安</span>
         </div>
-        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
-            <i class="fas fa-user-tie text-primary"></i>
-          </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">税理士さんはいるけど、経営判断は相談しづらい</p>
-        </div>
-        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
-            <i class="fas fa-chart-line text-primary"></i>
-          </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">採用や投資に、いくら使えるかわからない</p>
-        </div>
-        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
-            <i class="fas fa-triangle-exclamation text-primary"></i>
-          </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">資金繰りがいつも不安</p>
-        </div>
-        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
-            <i class="fas fa-calculator text-primary"></i>
-          </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">数字を見るのが苦手</p>
-        </div>
-        <div class="card card-hover p-5 md:p-6 flex items-start gap-4">
-          <div class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 bg-soft mt-0.5">
-            <i class="fas fa-heart text-primary"></i>
-          </div>
-          <p class="text-sm md:text-base pt-2" style="color: var(--color-text-soft); line-height: 1.7;">経営を安心して話せる相手がほしい</p>
+        <!-- 下段 -->
+        <div class="flex flex-wrap justify-center items-start gap-x-6 gap-y-5">
+          <span class="concern-bubble tail-tr float-5 md:ml-12">数字を見るのが苦手</span>
+          <span class="concern-bubble tail-tl float-6 md:mr-12 md:mt-3">経営を安心して話せる相手がほしい</span>
         </div>
       </div>
 
